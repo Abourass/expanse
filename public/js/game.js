@@ -42,12 +42,17 @@ function introClick(clickValue){
 function findingHomeClick(clickValue){
   awareness += clickValue;
   yPosition += clickValue;
-  xPosition += clickValue / 2;
+  xPosition += clickValue / 2.5;
+  clearCanvas();
+  createMap();
   createPlayer(yPosition, xPosition)
 }
 
 // Map Script
 function createMap() {
+  if (document.getElementById('mapBase')){
+    document.getElementById('mapBase').remove();
+  }
   const magicMapBase = document.createElement('script');
   magicMapBase.type = 'text/javascript';
   magicMapBase.id = 'mapBase';
@@ -86,10 +91,6 @@ function createPlayer(yPosition, xPosition) {
   // Map Script - Player Icon
   if (document.getElementById('mapPlayerScript')){
     document.getElementById('mapPlayerScript').remove();
-    const canvas = document.getElementById('canvas');
-    const context = canvas.getContext('2d');
-    context.clearRect(0, 0, canvas.width, canvas.height);
-    createMap();
   }
   const magicMapPlayer = document.createElement('script');
   magicMapPlayer.type = 'text/javascript';
@@ -110,3 +111,8 @@ rc.circle(${yPosition}, ${xPosition}, 20, {
   }
 }
 
+function clearCanvas() {
+  const canvas = document.getElementById('canvas');
+  const context = canvas.getContext('2d');
+  context.clearRect(0, 0, canvas.width, canvas.height);
+}
