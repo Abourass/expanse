@@ -14,7 +14,7 @@ function nodeContent(selectedNode, content) {
 }
 
 // Variables
-let health = 1, money = 0, currentLocation = 'a dirty alley', awareness = 0; xPosition = 15; yPosition = 35;
+let health = 1, money = 0, currentLocation = 'a dirty alley', awareness = 0, xPosition = 15, yPosition = 35;
 
 function introClick(number){
   health += number;
@@ -50,7 +50,10 @@ function introClick(number){
 }
 
 function findingHomeClick(number){
-  document.getElementById('mapPlayer').remove();
+  let nodeToRemove = document.getElementById('mapPlayer');
+  if (nodeToRemove.parentNode) {
+    nodeToRemove.parentNode.removeChild(nodeToRemove);
+  }
   awareness += number;
   yPosition += number;
   xPosition += number;
