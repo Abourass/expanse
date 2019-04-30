@@ -3,15 +3,13 @@ let money = 0;
 let currentLocation = 'A Dirty Alley';
 
 function nodeVisToggle(node, className) {
-  let commandArray = [];
   if (Array.isArray(node)) {
     for (let step = 0; step < node.length; step++) {
-      commandArray.push(`document.getElementById('${node.step}').classList.toggle('${className}');`)
+      document.getElementById('${node.step}').classList.toggle('${className}');
     }
   } else {
-    commandArray.push(`document.getElementById('${node}').classList.toggle('${className}');`)
+    document.getElementById('${node}').classList.toggle('${className}');
   }
-  return commandArray;
 }
 
 function introClick(number){
