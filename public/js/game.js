@@ -79,6 +79,10 @@ class User {
   set location(value) {
     this._location = value;
   }
+
+  setLocation(value) {
+    this.location = value;
+  }
 }
 
 // Initiate New User
@@ -134,7 +138,7 @@ function findingHomeClick(clickValue){
     createPlayer(yPosition, xPosition);
   } else if ( player.awareness >= 17 && player.awareness <= 20) {
     let toggleNodeArray = ['basicStats', 'barStats'];
-    player.location('the city. You\'re standing at the mouth of the alley where you awoke.');
+    player.setLocation('the city. You\'re standing at the mouth of the alley where you awoke.');
     nodeContent('messageUI', 'After limping to the end of the alley you\'ve made it to the street. Where to now?');
     nodeContent('locationUIBar', player.location);
     nodeVisToggle(toggleNodeArray, 'hidden');
