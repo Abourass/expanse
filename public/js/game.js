@@ -90,7 +90,8 @@ function createPlayer(yPosition, xPosition) {
   if (document.getElementById('mapPlayerScript')){
     document.getElementById('mapPlayerScript').remove();
     const canvas = document.getElementById('canvas');
-    canvas.clearRect(0, 0, canvas.width, canvas.height);
+    const context = canvas.getContext('2d');
+    context.clearRect(0, 0, canvas.width, canvas.height);
     createMap();
   }
   const magicMapPlayer = document.createElement('script');
