@@ -130,7 +130,7 @@ function findingHomeClick(clickValue){
     redrawMap();
     createPlayer(yPosition, xPosition);
   } else if ( player.awareness >= 17 && player.awareness <= 20) {
-    nodeContent('messageUI', 'Having limped to the end of the alley you\'ve made it to street. Where to now?')
+    nodeContent('messageUI', 'Having limped to the end of the alley you\'ve made it to street. Where to now?');
     player.incAwareness(clickValue);
     yPosition += clickValue / 4;
     xPosition += clickValue * 4;
@@ -247,5 +247,3 @@ function clearCanvas() {
   const context = canvas.getContext('2d');
   context.clearRect(0, 0, canvas.width, canvas.height);
 }
-
-
