@@ -14,22 +14,7 @@ function nodeContent(selectedNode, content) {
 }
 
 // Variables
-let health = 1, money = 0, currentLocation = 'a dirty alley', awareness = 0;
-
-// Map Script - Player Icon
-const magicMapPlayer = document.createElement('script');
-magicMapPlayer.type = 'text/javascript';
-magicMapPlayer.id = 'mapPlayer';
-let xPosition = 15;
-let yPosition = 35;
-let mapPlayer = `
-rc.circle(${yPosition}, ${xPosition}, 20, {
-  fill: "rgb(10, 150, 10)",
-  fillWeight: 1,
-  fillStyle: 'cross-hatch',
-  roughness: 2
-});`;
-
+let health = 1, money = 0, currentLocation = 'a dirty alley', awareness = 0; xPosition = 15; yPosition = 35;
 
 function introClick(number){
   health += number;
@@ -65,8 +50,8 @@ function introClick(number){
 }
 
 function findingHomeClick(number){
-  awareness += number;
   document.getElementById('mapPlayer').remove();
+  awareness += number;
   yPosition += number;
   xPosition += number;
   try {
@@ -103,3 +88,15 @@ rc.rectangle(10, 0, 70, 10, {
 });
 
 `;
+
+// Map Script - Player Icon
+const magicMapPlayer = document.createElement('script');
+magicMapPlayer.type = 'text/javascript';
+magicMapPlayer.id = 'mapPlayer';
+let mapPlayer = `
+rc.circle(${yPosition}, ${xPosition}, 20, {
+  fill: "rgb(10, 150, 10)",
+  fillWeight: 1,
+  fillStyle: 'cross-hatch',
+  roughness: 2
+});`;
