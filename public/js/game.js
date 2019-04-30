@@ -1,21 +1,7 @@
-// Time Saving Functions
-function nodeVisToggle(toggleNode, className) {
-  if (Array.isArray(toggleNode)) {
-    for (let step = 0; step < toggleNode.length; step++) {
-      document.getElementById(`${toggleNode[step]}`).classList.toggle(`${className}`);
-    }
-  } else {
-    document.getElementById(`${toggleNode}`).classList.toggle(`${className}`);
-  }
-}
-
-function nodeContent(selectedNode, content) {
-  document.getElementById(`${selectedNode}`).innerHTML = `${content}`;
-}
-
 // Variables
 let health = 1, money = 0, awareness = 0, yPosition = 35, xPosition = 15, currentLocation = 'a dirty alley';
 
+// User Class
 class User {
   constructor(name) {
     // invokes the setter
@@ -95,8 +81,25 @@ class User {
   }
 }
 
+// Initiate New User
 const player = new User('Player');
 
+// Time Saving Functions
+function nodeVisToggle(toggleNode, className) {
+  if (Array.isArray(toggleNode)) {
+    for (let step = 0; step < toggleNode.length; step++) {
+      document.getElementById(`${toggleNode[step]}`).classList.toggle(`${className}`);
+    }
+  } else {
+    document.getElementById(`${toggleNode}`).classList.toggle(`${className}`);
+  }
+}
+
+function nodeContent(selectedNode, content) {
+  document.getElementById(`${selectedNode}`).innerHTML = `${content}`;
+}
+
+// Click Functions
 function introClick(clickValue){
   player.incHealth(clickValue);
   nodeContent('healthUI', player.health);
@@ -218,6 +221,7 @@ rc.rectangle(10, 0, 70, 10, {
   }
 }
 
+// Draw Player Script
 function createPlayer(yPosition, xPosition) {
   // Map Script - Player Icon
   if (document.getElementById('mapPlayerScript')){
@@ -242,6 +246,7 @@ rc.circle(${yPosition}, ${xPosition}, 20, {
   }
 }
 
+// Clear Canvas Script
 function clearCanvas() {
   const canvas = document.getElementById('canvas');
   const context = canvas.getContext('2d');
