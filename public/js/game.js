@@ -9,8 +9,10 @@ function introClick(number){
     document.getElementById('messageUI').innerHTML = 'Your throat tightens in pain with each cough'
   } else if (health === 8 || health === 9) {
     document.getElementById('messageUI').innerHTML = 'Blood splatters onto the pavement next to your face'
-  } else if (health === 10 || health === 11) {
+  } else if (health >= 10 || health <= 14) {
     document.getElementById('introButton').innerHTML = 'Breathe';
-    document.getElementById('messageUI').innerHTML = 'You realize your laying on cold concrete, in an alley of some sort. Your head swims..'
+    document.getElementById('messageUI').innerHTML = "You realize you're laying on cold concrete, in an alley of some sort. Your head swims.."
+  } else if ( health === 15) {
+    document.getElementById('introButton').className = "hidden";
   }
 }
