@@ -42,36 +42,12 @@ class User {
     return this._health;
   }
 
-  set incHealth(incValue) {
-    this._health += incValue;
-  }
-
-  set subHealth(subValue) {
-    this._health -= subValue;
-  }
-
   get money() {
     return this._money;
   }
 
-  set incMoney(incValue) {
-    this._money += incValue;
-  }
-
-  set subMoney(subValue) {
-    this._money -= subValue;
-  }
-
   get awareness() {
     return this._awareness;
-  }
-
-  set incAwareness(incValue) {
-    this._awareness += incValue;
-  }
-
-  set subAwareness(subValue) {
-    this._awareness -= subValue;
   }
 
   get location() {
@@ -80,6 +56,14 @@ class User {
 
   set location(value) {
     this._location = value;
+  }
+
+  incHealth(clickValue) {
+    this._health =+ clickValue;
+  }
+
+  incAwareness(clickValue) {
+    this._awareness += clickValue;
   }
 }
 
@@ -114,7 +98,7 @@ function findingHomeClick(clickValue){
   xPosition += clickValue / 2.5;
   clearCanvas();
   createMap();
-  createPlayer(yPosition, xPosition)
+  createPlayer(yPosition, xPosition);
   createMap();
 }
 
