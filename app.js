@@ -24,12 +24,14 @@ app.use(bodyParser.urlencoded({ extended: false })); // ============> CSRF Prote
 app.use(cookieParser()); // ========================================> Cookie Parser Middleware <==============================
 app.use(csrf({ cookie: true })); // ================================> CSRF Use Cookies <======================================
 
+const User = require('./models/Users'); // ==========================> Import Models & Schema <================================
+
 const indexRouter = require('./routes/index'); // ========================> Load Routes <===========================================
 const usersRouter = require('./routes/users');
 
 require('./bin/passport')(passport); // =========================> Passport Config <=======================================
 mongoose.connect(process.env.mongoURI, { useNewUrlParser: true }) // ======> Connect to our Database <===============================
-.then(() => console.log('Atlas is alive | Database Connected => ♥')).catch(err => console.log(err));
+.then(() => console.log('MLAB is still there | Database Connected => ♥')).catch(err => console.log(err));
 function shouldCompress(req, res, next) { // =======================> Compression Middleware <=================================
   if (req.headers['x-no-compression']) { return false; } // ========> Don't compress responses w/ no-compression header <======
   return compression.filter(req, res); // ==========================> fallback to standard filter function <===================
