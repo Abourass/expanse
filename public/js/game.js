@@ -129,6 +129,7 @@ function introClick(clickValue){
 
 function findingHomeClick(clickValue){
   if (player.awareness <= 16) {
+    nodeContent('messageUI', 'You make your way slowly down the alley');
     player.incAwareness(clickValue);
     yPosition += clickValue / 4;
     xPosition += clickValue * 4;
