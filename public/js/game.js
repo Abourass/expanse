@@ -24,14 +24,14 @@ function introClick(number){
   } else if (health === 6 || health === 7) {
     nodeContent('messageUI', 'Your throat tightens painfully with each cough.');
   } else if (health === 8 || health === 9) {
-    nodeContent('messageUI', 'You are acutely aware of how raw your throat is with each cough. A particularly hard cough leaves blood on the pavement next to your face.');
+    nodeContent('messageUI', 'A particularly hard cough leaves blood on the pavement next to your face. You are acutely aware of how raw your throat is. ');
   } else if (health === 10 ) {
     nodeContent('introButton', 'Breathe');
     nodeContent('messageUI', 'You realize you\'re laying on cold concrete, in an alley of some sort. Your head swims..');
   } else if ( health === 15) {
     let toggleNodeArray = ['introButton', 'findingHomeButton', 'moneyUIDesc', 'locationUIDesc', 'statPadding', 'map'];
     nodeVisToggle(toggleNodeArray, 'hidden');
-    nodeContent('messageUI', 'You sit up and try to remember what happened.. or to remember anything at all. What happened, who am I?!?');
+    nodeContent('messageUI', 'You sit up and try to remember what happened.. or to remember anything at all. What happened, Why am I here, who am I?!?');
     nodeContent('moneyUI', money);
     nodeContent('locationUI', currentLocation);
     try {
@@ -52,8 +52,13 @@ function findingHomeClick(number){
 const magicMap = document.createElement('script');
 magicMap.type = 'text/javascript';
 let magicMapContents = `const rc = rough.canvas(document.getElementById('canvas'));
-//line and rectangle
-rc.rectangle(140, 10, 100, 100, {
+// Map Below
+rc.rectangle(70, 10, 10, 100, {
+  fill: 'rgba(38, 38, 54, 0.97)',
+  fillStyle: 'solid',
+  roughness: 2
+});
+rc.rectangle(10, 10, 10, 100, {
   fill: 'rgba(38, 38, 54, 0.97)',
   fillStyle: 'solid',
   roughness: 2
