@@ -17,3 +17,7 @@ function introClick(number){
     document.getElementById('messageUI').innerHTML = "You sit up and try to remember what happened.. or to remember anything at all. What happened, who am I?!?";
   }
 }
+
+function findingHomeClick(number){
+
+}
