@@ -14,7 +14,7 @@ function nodeContent(selectedNode, content) {
 }
 
 // Variables
-let health = 1, money = 0, currentLocation = 'a dirty alley';
+let health = 1, money = 0, currentLocation = 'a dirty alley', awareness = 0;
 
 function introClick(number){
   health += number;
@@ -35,24 +35,28 @@ function introClick(number){
     nodeContent('moneyUI', money);
     nodeContent('locationUI', currentLocation);
     try {
-      magicMap.appendChild(document.createTextNode(magicMapContents));
+      magicMap.appendChild(document.createTextNode(magicMapHeader));
+      magicMap.appendChild(document.createTextNode(magicMapPlaces));
+      magicMap.appendChild(document.createTextNode(magicMapPlayer));
       document.body.appendChild(magicMap);
     } catch(err) {
-      magicMap.text = magicMapContents;
+      magicMap.text = magicMapHeader + magicMapPlaces + magicMapPlayer;
       document.body.appendChild(magicMap)
     }
   }
 }
 
 function findingHomeClick(number){
-
+  awareness += number;
 }
 
 // Map Script
 const magicMap = document.createElement('script');
 magicMap.type = 'text/javascript';
-let magicMapContents = `const rc = rough.canvas(document.getElementById('canvas'));
-// Map Below
+let magicMapHeader = `const rc = rough.canvas(document.getElementById('canvas'));
+
+`;
+let magicMapPlaces = `// Map Below
 rc.rectangle(70, 10, 10, 100, {
   fill: 'rgba(38, 38, 54, 0.97)',
   fillStyle: 'solid',
@@ -68,9 +72,12 @@ rc.rectangle(10, 0, 70, 10, {
   fillStyle: 'solid',
   roughness: 2
 });
+
+`;
+let magicMapPlayer = `
 rc.circle(35, 15, 20, {
   fill: "rgb(10, 150, 10)",
-  fillWeight: 1, // thicker lines for hachure
+  fillWeight: 1,
   fillStyle: 'cross-hatch',
   roughness: 2
 });`;
