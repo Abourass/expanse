@@ -42,7 +42,7 @@ function introClick(clickValue){
 function findingHomeClick(clickValue){
   awareness += clickValue;
   yPosition += clickValue;
-  xPosition += clickValue;
+  xPosition += clickValue / 2;
   createPlayer(yPosition, xPosition)
 }
 
@@ -89,6 +89,9 @@ function createPlayer(yPosition, xPosition) {
   // Map Script - Player Icon
   if (document.getElementById('mapPlayerScript')){
     document.getElementById('mapPlayerScript').remove();
+    const canvas = document.getElementById('canvas');
+    canvas.clearRect(0, 0, canvas.width, canvas.height);
+    createMap();
   }
   const magicMapPlayer = document.createElement('script');
   magicMapPlayer.type = 'text/javascript';
