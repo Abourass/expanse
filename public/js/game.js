@@ -2,13 +2,16 @@ let health = 1;
 let money = 0;
 let currentLocation = 'A Dirty Alley';
 
-function nodeVisToggle(node, className) {
-  if (Array.isArray(node)) {
-    for (let step = 0; step < node.length; step++) {
-      document.getElementById('${node.step}').classList.toggle('${className}');
+function nodeVisToggle(toggleNode, className) {
+  console.log(toggleNode);
+  if (Array.isArray(toggleNode)) {
+    console.log('toggle node is an Array');
+    for (let step = 0; step < toggleNode.length; step++) {
+      document.getElementById(`${toggleNode[step]}`).classList.toggle(`${className}`);
     }
   } else {
-    document.getElementById('${node}').classList.toggle('${className}');
+    console.log('toggleNode is NOT an array');
+    document.getElementById(`${toggleNode}`).classList.toggle(`${className}`);
   }
 }
 
@@ -25,7 +28,8 @@ function introClick(number){
     document.getElementById('introButton').innerHTML = 'Breathe';
     document.getElementById('messageUI').innerHTML = "You realize you're laying on cold concrete, in an alley of some sort. Your head swims..";
   } else if ( health === 15) {
-    nodeVisToggle(['introButton', 'findingHomeButton', 'moneyUIDesc', 'locationUI', 'statPadding', 'map'], 'hidden');
+    let toggleNodeArray = ['introButton', 'findingHomeButton', 'moneyUIDesc', 'locationUI', 'statPadding', 'map'];
+    nodeVisToggle(toggleNodeArray, 'hidden');
     document.getElementById('messageUI').innerHTML = "You sit up and try to remember what happened.. or to remember anything at all. What happened, who am I?!?";
     try {
       magicMap.appendChild(document.createTextNode(magicMapContents));
