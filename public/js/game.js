@@ -16,6 +16,21 @@ function nodeContent(selectedNode, content) {
 // Variables
 let health = 1, money = 0, currentLocation = 'a dirty alley', awareness = 0;
 
+// Map Script - Player Icon
+const magicMapPlayer = document.createElement('script');
+magicMapPlayer.type = 'text/javascript';
+magicMapPlayer.id = 'mapPlayer';
+let xPosition = 15;
+let yPosition = 35;
+let mapPlayer = `
+rc.circle(${yPosition}, ${xPosition}, 20, {
+  fill: "rgb(10, 150, 10)",
+  fillWeight: 1,
+  fillStyle: 'cross-hatch',
+  roughness: 2
+});`;
+
+
 function introClick(number){
   health += number;
   nodeContent('healthUI', health);
@@ -35,24 +50,38 @@ function introClick(number){
     nodeContent('moneyUI', money);
     nodeContent('locationUI', currentLocation);
     try {
-      magicMap.appendChild(document.createTextNode(magicMapHeader));
-      magicMap.appendChild(document.createTextNode(magicMapPlaces));
-      magicMap.appendChild(document.createTextNode(magicMapPlayer));
-      document.body.appendChild(magicMap);
+      magicMapBase.appendChild(document.createTextNode(magicMapHeader));
+      magicMapBase.appendChild(document.createTextNode(magicMapPlaces));
+      document.body.appendChild(magicMapBase);
+      magicMapPlayer.appendChild(document.createTextNode(mapPlayer));
+      document.body.appendChild(magicMapPlayer);
     } catch(err) {
-      magicMap.text = magicMapHeader + magicMapPlaces + magicMapPlayer;
-      document.body.appendChild(magicMap)
+      magicMapBase.text = magicMapHeader + magicMapPlaces;
+      document.body.appendChild(magicMapBase);
+      magicMapPlayer.text = mapPlayer;
+      document.body.appendChild(magicMapPlayer);
     }
   }
 }
 
 function findingHomeClick(number){
   awareness += number;
+  document.getElementById('mapPlayer').remove();
+  yPosition += number;
+  xPosition += number;
+  try {
+    magicMapPlayer.appendChild(document.createTextNode(mapPlayer));
+    document.body.appendChild(magicMapPlayer);
+  } catch(err) {
+    magicMapPlayer.text = mapPlayer;
+    document.body.appendChild(magicMapPlayer);
+  }
 }
 
 // Map Script
-const magicMap = document.createElement('script');
-magicMap.type = 'text/javascript';
+const magicMapBase = document.createElement('script');
+magicMapBase.type = 'text/javascript';
+magicMapBase.id = 'mapBase';
 let magicMapHeader = `const rc = rough.canvas(document.getElementById('canvas'));
 
 `;
@@ -74,10 +103,3 @@ rc.rectangle(10, 0, 70, 10, {
 });
 
 `;
-let magicMapPlayer = `
-rc.circle(35, 15, 20, {
-  fill: "rgb(10, 150, 10)",
-  fillWeight: 1,
-  fillStyle: 'cross-hatch',
-  roughness: 2
-});`;

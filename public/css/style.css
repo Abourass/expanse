@@ -40,6 +40,7 @@ a {
   text-rendering: auto;
   border-color: buttonface;
   align-items: flex-start;
+  outline: none;
 }
 
 .simpleButton::after {
