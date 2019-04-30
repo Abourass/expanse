@@ -9,10 +9,11 @@ function introClick(number){
     document.getElementById('messageUI').innerHTML = 'Your throat tightens in pain with each cough'
   } else if (health === 8 || health === 9) {
     document.getElementById('messageUI').innerHTML = 'Blood splatters onto the pavement next to your face'
-  } else if (health >= 10 || health <= 14) {
+  } else if (health === 10 ) {
     document.getElementById('introButton').innerHTML = 'Breathe';
-    document.getElementById('messageUI').innerHTML = "You realize you're laying on cold concrete, in an alley of some sort. Your head swims.."
+    document.getElementById('messageUI').innerHTML = "You realize you're laying on cold concrete, in an alley of some sort. Your head swims..";
   } else if ( health === 15) {
-    document.getElementById('introButton').className = "hidden";
+    document.getElementById('introButton').classList.toggle('hidden');
+    document.getElementById('messageUI').innerHTML = "You sit up and try to remember what happened.. or to remember anything at all. What happened, who am I?!?";
   }
 }
