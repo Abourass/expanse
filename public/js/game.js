@@ -9,25 +9,31 @@ function nodeVisToggle(toggleNode, className) {
   }
 }
 
+function nodeContent(selectedNode, content) {
+  document.getElementById(`${selectedNode}`).innerHTML = `${content}`;
+}
+
 // Variables
-let health = 1, money = 0, currentLocation = 'A Dirty Alley';
+let health = 1, money = 0, currentLocation = 'a dirty alley';
 
 function introClick(number){
   health += number;
-  document.getElementById('healthUI').innerHTML = health;
+  nodeContent('healthUI', health);
   if (health === 5) {
-    document.getElementById('introButton').innerHTML = 'Cough';
+    nodeContent('introButton', 'Cough');
   } else if (health === 6 || health === 7) {
-    document.getElementById('messageUI').innerHTML = 'Your throat tightens in pain with each cough'
+    nodeContent('messageUI', 'Your throat tightens painfully with each cough.');
   } else if (health === 8 || health === 9) {
-    document.getElementById('messageUI').innerHTML = 'Blood splatters onto the pavement next to your face'
+    nodeContent('messageUI', 'You are acutely aware of how raw your throat is with each cough. A particularly hard cough leaves blood on the pavement next to your face.');
   } else if (health === 10 ) {
-    document.getElementById('introButton').innerHTML = 'Breathe';
-    document.getElementById('messageUI').innerHTML = "You realize you're laying on cold concrete, in an alley of some sort. Your head swims..";
+    nodeContent('introButton', 'Breathe');
+    nodeContent('messageUI', 'You realize you\'re laying on cold concrete, in an alley of some sort. Your head swims..');
   } else if ( health === 15) {
-    let toggleNodeArray = ['introButton', 'findingHomeButton', 'moneyUIDesc', 'locationUI', 'statPadding', 'map'];
+    let toggleNodeArray = ['introButton', 'findingHomeButton', 'moneyUIDesc', 'locationUIDesc', 'statPadding', 'map'];
     nodeVisToggle(toggleNodeArray, 'hidden');
-    document.getElementById('messageUI').innerHTML = "You sit up and try to remember what happened.. or to remember anything at all. What happened, who am I?!?";
+    nodeContent('messageUI', 'You sit up and try to remember what happened.. or to remember anything at all. What happened, who am I?!?');
+    nodeContent('moneyUI', money);
+    nodeContent('locationUI', currentLocation);
     try {
       magicMap.appendChild(document.createTextNode(magicMapContents));
       document.body.appendChild(magicMap);
