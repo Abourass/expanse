@@ -56,6 +56,11 @@ a {
   content: "";
 }
 
+.simpleButton.is-black {
+  background-color: rgba(38, 38, 54, 1) !important;
+  color: white !important;
+}
+
 .nes-container {
   position: relative;
   padding: 1.5rem 2rem;
@@ -74,4 +79,39 @@ a {
   margin: -1.8rem 0 1rem;
   font-size: 1rem;
   background-color: #fff;
+}
+
+#awareStats {
+  display: flex;
+}
+
+#healthBarHolder {
+  width: 30%;
+  background-color: grey;
+  order: 1;
+  margin-right: 1rem;
+}
+
+#healthBar {
+  width: 15%;
+  height: 30px;
+  background-color: green;
+  color: black;
+  text-align: center;
+  line-height: 30px;
+}
+
+#awareBarHolder {
+  width: 30%;
+  background-color: grey;
+  order: 2
+}
+
+#awareBar {
+  width: 20%;
+  height: 30px;
+  background-color: rebeccapurple;
+  color: white;
+  text-align: center;
+  line-height: 30px;
 }

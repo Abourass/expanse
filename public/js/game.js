@@ -133,7 +133,11 @@ function findingHomeClick(clickValue){
     redrawMap();
     createPlayer(yPosition, xPosition);
   } else if ( player.awareness >= 17 && player.awareness <= 20) {
-    nodeContent('messageUI', 'Having limped to the end of the alley you\'ve made it to street. Where to now?');
+    let toggleNodeArray = ['basicStats', 'barStats'];
+    player.location('the city. You\'re standing at the mouth of the alley where you awoke.');
+    nodeContent('messageUI', 'After limping to the end of the alley you\'ve made it to the street. Where to now?');
+    nodeContent('locationUIBar', player.location);
+    nodeVisToggle(toggleNodeArray, 'hidden');
     player.incAwareness(clickValue);
     yPosition += clickValue / 4;
     xPosition += clickValue * 4;
@@ -142,7 +146,8 @@ function findingHomeClick(clickValue){
     redrawMap();
     createPlayer(yPosition, xPosition);
   } else if ( player.awareness >= 21) {
-    nodeContent('messageUI', 'Having limped to the end of the alley you\'ve made it to street. Where to now?')
+    nodeContent('messageUI', 'After limping to the end of the alley you\'ve made it to the street.  Where to now?')
+    deleteScripts();
   }
 }
 
@@ -251,4 +256,18 @@ function clearCanvas() {
   const canvas = document.getElementById('canvas');
   const context = canvas.getContext('2d');
   context.clearRect(0, 0, canvas.width, canvas.height);
+}
+
+// Delete All Scripts
+function deleteScripts() {
+  clearCanvas();
+  if (document.getElementById('mapBase')){
+    document.getElementById('mapBase').remove();
+  }
+  if (document.getElementById('mapRedraw')){
+    document.getElementById('mapRedraw').remove();
+  }
+  if (document.getElementById('mapPlayerScript')){
+    document.getElementById('mapPlayerScript').remove();
+  }
 }
