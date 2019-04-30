@@ -121,17 +121,30 @@ function introClick(clickValue){
 }
 
 function findingHomeClick(clickValue){
-  player.incAwareness(clickValue);
-  yPosition += clickValue;
-  xPosition += clickValue / 2.5;
-  clearCanvas();
-  createMap();
-  redrawMap();
-  createPlayer(yPosition, xPosition);
+  if (player.awareness <= 16) {
+    player.incAwareness(clickValue);
+    yPosition += clickValue / 4;
+    xPosition += clickValue * 4;
+    clearCanvas();
+    createMap();
+    redrawMap();
+    createPlayer(yPosition, xPosition);
+  } else if ( player.awareness >= 17 && player.awareness <= 20) {
+    nodeContent('messageUI', 'Having limped to the end of the alley you\'ve made it to street. Where to now?')
+    player.incAwareness(clickValue);
+    yPosition += clickValue / 4;
+    xPosition += clickValue * 4;
+    clearCanvas();
+    createMap();
+    redrawMap();
+    createPlayer(yPosition, xPosition);
+  } else if ( player.awareness >= 21) {
+    nodeContent('messageUI', 'Having limped to the end of the alley you\'ve made it to street. Where to now?')
+  }
 }
 
 // Map Script
-function createMap(yPosition, xPosition) {
+function createMap() {
   if (document.getElementById('mapBase')){
     document.getElementById('mapBase').remove();
   }
