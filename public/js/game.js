@@ -126,12 +126,15 @@ function findingHomeClick(clickValue){
   xPosition += clickValue / 2.5;
   clearCanvas();
   createMap();
+  redrawMap();
   createPlayer(yPosition, xPosition);
-  createMap();
 }
 
 // Map Script
-function createMap() {
+function createMap(yPosition, xPosition) {
+  if (document.getElementById('mapBase')){
+    document.getElementById('mapBase').remove();
+  }
   const magicMapBase = document.createElement('script');
   magicMapBase.type = 'text/javascript';
   magicMapBase.id = 'mapBase';
@@ -163,6 +166,42 @@ rc.rectangle(10, 0, 70, 10, {
   } catch(err) {
     magicMapBase.text = magicMapHeader + magicMapPlaces;
     document.body.appendChild(magicMapBase);
+  }
+}
+
+// Redraw Map Script
+function redrawMap() {
+  if (document.getElementById('mapRedraw')){
+    document.getElementById('mapRedraw').remove();
+  }
+  const magicMapRedraw = document.createElement('script');
+  magicMapRedraw.type = 'text/javascript';
+  magicMapRedraw.id = 'mapRedraw';
+
+  let magicMapPlaces = `// Map Below
+rc.rectangle(70, 10, 10, 100, {
+  fill: 'rgba(38, 38, 54, 0.97)',
+  fillStyle: 'solid',
+  roughness: 2
+});
+rc.rectangle(10, 10, 10, 100, {
+  fill: 'rgba(38, 38, 54, 0.97)',
+  fillStyle: 'solid',
+  roughness: 2
+});
+rc.rectangle(10, 0, 70, 10, {
+  fill: 'rgba(38, 38, 54, 0.97)',
+  fillStyle: 'solid',
+  roughness: 2
+});
+
+`;
+  try {
+    magicMapRedraw.appendChild(document.createTextNode(magicMapPlaces));
+    document.body.appendChild(magicMapRedraw);
+  } catch(err) {
+    magicMapRedraw.text = magicMapPlaces;
+    document.body.appendChild(magicMapRedraw);
   }
 }
 
