@@ -68,7 +68,7 @@ rc.rectangle(10, 0, 70, 10, {
   fillStyle: 'solid',
   roughness: 2
 });
-canvas.circle(35, 15, 20, {
+rc.circle(35, 15, 20, {
   fill: "rgb(10, 150, 10)",
   fillWeight: 3, // thicker lines for hachure
   fillStyle: 'cross-hatch',
