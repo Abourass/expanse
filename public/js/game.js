@@ -14,10 +14,10 @@ function nodeContent(selectedNode, content) {
 }
 
 // Variables
-let health = 1, money = 0, currentLocation = 'a dirty alley', awareness = 0, xPosition = 15, yPosition = 35;
+let health = 1, money = 0, awareness = 0, currentLocation = 'a dirty alley';
 
-function introClick(number){
-  health += number;
+function introClick(clickValue){
+  health += clickValue;
   nodeContent('healthUI', health);
   if (health === 5) {
     nodeContent('introButton', 'Cough');
@@ -34,46 +34,26 @@ function introClick(number){
     nodeContent('messageUI', 'You sit up and try to remember what happened.. or to remember anything at all. What happened, Why am I here, who am I?!?');
     nodeContent('moneyUI', money);
     nodeContent('locationUI', currentLocation);
-    try {
-      magicMapBase.appendChild(document.createTextNode(magicMapHeader));
-      magicMapBase.appendChild(document.createTextNode(magicMapPlaces));
-      document.body.appendChild(magicMapBase);
-      magicMapPlayer.appendChild(document.createTextNode(mapPlayer));
-      document.body.appendChild(magicMapPlayer);
-    } catch(err) {
-      magicMapBase.text = magicMapHeader + magicMapPlaces;
-      document.body.appendChild(magicMapBase);
-      magicMapPlayer.text = mapPlayer;
-      document.body.appendChild(magicMapPlayer);
-    }
+    createMap();
+    createPlayer(0, 0);
   }
 }
 
-function findingHomeClick(number){
-  let nodeToRemove = document.getElementById('mapPlayer');
-  if (nodeToRemove.parentNode) {
-    nodeToRemove.parentNode.removeChild(nodeToRemove);
-  }
-  awareness += number;
-  yPosition += number;
-  xPosition += number;
-  try {
-    magicMapPlayer.appendChild(document.createTextNode(mapPlayer));
-    document.body.appendChild(magicMapPlayer);
-  } catch(err) {
-    magicMapPlayer.text = mapPlayer;
-    document.body.appendChild(magicMapPlayer);
-  }
+function findingHomeClick(clickValue){
+  awareness += clickValue;
+  createPlayer(clickValue, clickValue)
 }
 
 // Map Script
-const magicMapBase = document.createElement('script');
-magicMapBase.type = 'text/javascript';
-magicMapBase.id = 'mapBase';
-let magicMapHeader = `const rc = rough.canvas(document.getElementById('canvas'));
+function createMap() {
+  document.getElementById('mapBase').remove();
+  const magicMapBase = document.createElement('script');
+  magicMapBase.type = 'text/javascript';
+  magicMapBase.id = 'mapBase';
+  let magicMapHeader = `const rc = rough.canvas(document.getElementById('canvas'));
 
 `;
-let magicMapPlaces = `// Map Below
+  let magicMapPlaces = `// Map Below
 rc.rectangle(70, 10, 10, 100, {
   fill: 'rgba(38, 38, 54, 0.97)',
   fillStyle: 'solid',
@@ -91,15 +71,37 @@ rc.rectangle(10, 0, 70, 10, {
 });
 
 `;
+  try {
+    magicMapBase.appendChild(document.createTextNode(magicMapHeader));
+    magicMapBase.appendChild(document.createTextNode(magicMapPlaces));
+    document.body.appendChild(magicMapBase);
+  } catch(err) {
+    magicMapBase.text = magicMapHeader + magicMapPlaces;
+    document.body.appendChild(magicMapBase);
+  }
+}
 
-// Map Script - Player Icon
-const magicMapPlayer = document.createElement('script');
-magicMapPlayer.type = 'text/javascript';
-magicMapPlayer.id = 'mapPlayer';
-let mapPlayer = `
+function createPlayer(xInput, yInput) {
+  // Map Script - Player Icon
+  document.getElementById('mapPlayerScript').remove();
+  const magicMapPlayer = document.createElement('script');
+  magicMapPlayer.type = 'text/javascript';
+  magicMapPlayer.id = 'mapPlayerScript';
+  let yPosition = 35 + yInput;
+  let xPosition = 15 + xInput;
+  let mapPlayer = `
 rc.circle(${yPosition}, ${xPosition}, 20, {
   fill: "rgb(10, 150, 10)",
   fillWeight: 1,
   fillStyle: 'cross-hatch',
   roughness: 2
 });`;
+  try {
+    magicMapPlayer.appendChild(document.createTextNode(mapPlayer));
+    document.body.appendChild(magicMapPlayer);
+  } catch(err) {
+    magicMapPlayer.text = mapPlayer;
+    document.body.appendChild(magicMapPlayer);
+  }
+}
+
