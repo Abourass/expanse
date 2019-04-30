@@ -14,7 +14,7 @@ function nodeContent(selectedNode, content) {
 }
 
 // Variables
-let health = 1, money = 0, awareness = 0, currentLocation = 'a dirty alley';
+let health = 1, money = 0, awareness = 0, yPosition = 35, xPosition = 15, currentLocation = 'a dirty alley';
 
 function introClick(clickValue){
   health += clickValue;
@@ -41,12 +41,16 @@ function introClick(clickValue){
 
 function findingHomeClick(clickValue){
   awareness += clickValue;
-  createPlayer(clickValue, clickValue)
+  yPosition += clickValue;
+  xPosition += clickValue;
+  createPlayer(yPosition, xPosition)
 }
 
 // Map Script
 function createMap() {
-  document.getElementById('mapBase').remove();
+  if(document.getElementById('mapBase')){
+    document.getElementById('mapBase').remove();
+  }
   const magicMapBase = document.createElement('script');
   magicMapBase.type = 'text/javascript';
   magicMapBase.id = 'mapBase';
@@ -81,14 +85,14 @@ rc.rectangle(10, 0, 70, 10, {
   }
 }
 
-function createPlayer(xInput, yInput) {
+function createPlayer(yPosition, xPosition) {
   // Map Script - Player Icon
-  document.getElementById('mapPlayerScript').remove();
+  if (document.getElementById('mapPlayerScript')){
+    document.getElementById('mapPlayerScript').remove();
+  }
   const magicMapPlayer = document.createElement('script');
   magicMapPlayer.type = 'text/javascript';
   magicMapPlayer.id = 'mapPlayerScript';
-  let yPosition = 35 + yInput;
-  let xPosition = 15 + xInput;
   let mapPlayer = `
 rc.circle(${yPosition}, ${xPosition}, 20, {
   fill: "rgb(10, 150, 10)",
