@@ -42,12 +42,48 @@ class User {
     return this._health;
   }
 
+  set health(value) {
+    this._health = value;
+  }
+
+  incHealth(clickValue) {
+    this.health += clickValue;
+  }
+
+  subHealth(clickValue) {
+    this.health -= clickValue;
+  }
+
   get money() {
     return this._money;
   }
 
+  set money(value) {
+    this._money = value;
+  }
+
+  incMoney(clickValue) {
+    this.money += clickValue;
+  }
+
+  subMoney(clickValue) {
+    this.money -= clickValue;
+  }
+
   get awareness() {
     return this._awareness;
+  }
+
+  set awareness(value) {
+    this._awareness = value;
+  }
+
+  incAwareness(clickValue) {
+    this.awareness += clickValue;
+  }
+
+  subAwareness(clickValue) {
+    this.awareness -= clickValue;
   }
 
   get location() {
@@ -56,14 +92,6 @@ class User {
 
   set location(value) {
     this._location = value;
-  }
-
-  incHealth(clickValue) {
-    this._health =+ clickValue;
-  }
-
-  incAwareness(clickValue) {
-    this._awareness += clickValue;
   }
 }
 
