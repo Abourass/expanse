@@ -16,36 +16,106 @@ function nodeContent(selectedNode, content) {
 // Variables
 let health = 1, money = 0, awareness = 0, yPosition = 35, xPosition = 15, currentLocation = 'a dirty alley';
 
+class User {
+  constructor(name) {
+    // invokes the setter
+    this._name = name;
+    this._health = health;
+    this._money = money;
+    this._awareness = awareness;
+    this._location = currentLocation;
+  }
+
+  get name() {
+    return this._name;
+  }
+
+  set name(value) {
+    if (value.length < 2){
+      alert("Name is too short.");
+      return;
+    }
+    this._name = value;
+  }
+
+  get health() {
+    return this._health;
+  }
+
+  set incHealth(incValue) {
+    this._health += incValue;
+  }
+
+  set subHealth(subValue) {
+    this._health -= subValue;
+  }
+
+  get money() {
+    return this._money;
+  }
+
+  set incMoney(incValue) {
+    this._money += incValue;
+  }
+
+  set subMoney(subValue) {
+    this._money -= subValue;
+  }
+
+  get awareness() {
+    return this._awareness;
+  }
+
+  set incAwareness(incValue) {
+    this._awareness += incValue;
+  }
+
+  set subAwareness(subValue) {
+    this._awareness -= subValue;
+  }
+
+  get location() {
+    return this._location;
+  }
+
+  set location(value) {
+    this._location = value;
+  }
+}
+
+const player = new User('Player');
+
 function introClick(clickValue){
-  health += clickValue;
-  nodeContent('healthUI', health);
-  if (health === 5) {
+  player.incHealth(clickValue);
+  nodeContent('healthUI', player.health);
+  if (player.health === 5) {
     nodeContent('introButton', 'Cough');
-  } else if (health === 6 || health === 7) {
+  } else if (player.health === 6 || player.health === 7) {
     nodeContent('messageUI', 'Your throat tightens painfully with each cough.');
-  } else if (health === 8 || health === 9) {
+  } else if (player.health === 8 || player.health === 9) {
     nodeContent('messageUI', 'A particularly hard cough leaves blood on the pavement next to your face. You are acutely aware of how raw your throat is. ');
-  } else if (health === 10 ) {
+  } else if (player.health === 10 ) {
     nodeContent('introButton', 'Breathe');
     nodeContent('messageUI', 'You realize you\'re laying on cold concrete, in an alley of some sort. Your head swims..');
-  } else if ( health === 15) {
+  } else if ( player.health === 15) {
     let toggleNodeArray = ['introButton', 'findingHomeButton', 'moneyUIDesc', 'locationUIDesc', 'statPadding', 'map'];
     nodeVisToggle(toggleNodeArray, 'hidden');
     nodeContent('messageUI', 'You sit up and try to remember what happened.. or to remember anything at all. What happened, Why am I here, who am I?!?');
-    nodeContent('moneyUI', money);
-    nodeContent('locationUI', currentLocation);
+    nodeContent('moneyUI', player.money);
+    nodeContent('locationUI', player.location);
     createMap();
     createPlayer(0, 0);
   }
 }
 
 function findingHomeClick(clickValue){
-  awareness += clickValue;
+  player.incAwareness(clickValue);
   yPosition += clickValue;
   xPosition += clickValue / 2.5;
   clearCanvas();
   createMap();
   createPlayer(yPosition, xPosition)
+  createMap();
 }
 
 // Map Script
@@ -113,3 +183,5 @@ function clearCanvas() {
   const context = canvas.getContext('2d');
   context.clearRect(0, 0, canvas.width, canvas.height);
 }
+
+
