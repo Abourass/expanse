@@ -1,19 +1,16 @@
-let health = 1;
-let money = 0;
-let currentLocation = 'A Dirty Alley';
-
+// Time Saving Functions
 function nodeVisToggle(toggleNode, className) {
-  console.log(toggleNode);
   if (Array.isArray(toggleNode)) {
-    console.log('toggle node is an Array');
     for (let step = 0; step < toggleNode.length; step++) {
       document.getElementById(`${toggleNode[step]}`).classList.toggle(`${className}`);
     }
   } else {
-    console.log('toggleNode is NOT an array');
     document.getElementById(`${toggleNode}`).classList.toggle(`${className}`);
   }
 }
+
+// Variables
+let health = 1, money = 0, currentLocation = 'A Dirty Alley';
 
 function introClick(number){
   health += number;
