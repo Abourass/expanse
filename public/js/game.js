@@ -70,7 +70,7 @@ rc.rectangle(10, 0, 70, 10, {
 });
 rc.circle(35, 15, 20, {
   fill: "rgb(10, 150, 10)",
-  fillWeight: 3, // thicker lines for hachure
+  fillWeight: 1, // thicker lines for hachure
   fillStyle: 'cross-hatch',
   roughness: 2
 });`;
