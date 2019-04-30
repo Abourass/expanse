@@ -50,9 +50,6 @@ function findingHomeClick(clickValue){
 
 // Map Script
 function createMap() {
-  if (document.getElementById('mapBase')){
-    document.getElementById('mapBase').remove();
-  }
   const magicMapBase = document.createElement('script');
   magicMapBase.type = 'text/javascript';
   magicMapBase.id = 'mapBase';
