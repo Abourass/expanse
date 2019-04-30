@@ -1,0 +1,132 @@
+{
+  "name": "expanse",
+  "engines": {
+    "node": "11.11.0"
+  },
+  "main": "bin/www.js",
+  "scripts": {
+    "start": "cross-env NODE_ENV=development nodemon bin/www.js",
+    "nodemonDevelopment": "cross-env NODE_ENV=development nodemon %NODE_DEBUG_OPTION%",
+    "nodemonProduction": "cross-env NODE_ENV=production nodemon bin/www.js",
+    "prod": "pm2-runtime start ecosystem.config.js --env production"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "1.19.0",
+    "compression": "^1.7.4",
+    "connect-flash": "^0.1.1",
+    "connect-mongo": "^2.0.3",
+    "cookie-parser": "^1.4.4",
+    "cross-env": "^5.2.0",
+    "csurf": "^1.10.0",
+    "debug": "^4.1.1",
+    "doge-seed": "^1.0.0",
+    "dotenv": "^7.0.0",
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.2",
+    "express-session": "^1.16.1",
+    "helmet": "^3.16.0",
+    "http-errors": "^1.7.2",
+    "ip": "^1.1.5",
+    "method-override": "^3.0.0",
+    "mongoose": "5.5.4",
+    "morgan": "^1.9.1",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "pm2": "^3.5.0"
+  },
+  "devDependencies": {
+    "@getify/eslint-plugin-proper-arrows": "8.0.1",
+    "@getify/eslint-plugin-proper-ternary": "^3.0.1",
+    "@types/express": "^4.16.1",
+    "babel-preset-env": "^1.7.0",
+    "chai": "^4.2.0",
+    "codacy-coverage": "^3.4.0",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-security": "^1.4.0",
+    "google-closure-compiler": "^20190415.0.0",
+    "mocha": "^6.1.4",
+    "nodemon": "^1.18.11",
+    "stylelint": "^10.0.1",
+    "stylelint-config-standard": "^18.3.0",
+    "stylelint-scss": "^3.6.0"
+  },
+  "eslintConfig": {
+    "plugins": [
+      "node",
+      "security",
+      "@getify/proper-ternary",
+      "@getify/proper-arrows"
+    ],
+    "extends": [
+      "airbnb-base",
+      "plugin:node/recommended",
+      "plugin:security/recommended",
+      "plugin:@getify/proper-ternary/getify-says",
+      "plugin:@getify/proper-arrows/getify-says"
+    ],
+    "env": {
+      "shared-node-browser": true,
+      "node": true,
+      "es6": true,
+      "mongo": true,
+      "jquery": true
+    },
+    "rules": {
+      "arrow-parens": [
+        "error",
+        "as-needed"
+      ],
+      "yoda": 0,
+      "no-unused-vars": 0,
+      "one-var": 0,
+      "one-var-declaration-per-line": 0,
+      "consistent-return": 0,
+      "linebreak-style": 0,
+      "eqeqeq": 0,
+      "func-names": 0,
+      "import/newline-after-import": 0,
+      "max-len": 0,
+      "no-console": 0,
+      "no-lonely-if": 0,
+      "no-new-object": [
+        "error"
+      ],
+      "object-curly-newline": [
+        "error",
+        {
+          "ObjectPattern": {
+            "multiline": true
+          }
+        }
+      ],
+      "no-param-reassign": 0,
+      "no-plusplus": 0,
+      "no-restricted-properties": 0,
+      "no-shadow": 0,
+      "no-underscore-dangle": 0,
+      "no-void": 0,
+      "object-curly-spacing": 0,
+      "object-shorthand": [
+        "error",
+        "consistent"
+      ],
+      "prefer-destructuring": 0,
+      "space-before-blocks": 0,
+      "space-before-function-paren": 0,
+      "prefer-rest-params": 0,
+      "@getify/proper-arrows/params": 0,
+      "@getify/proper-arrows/name": 0,
+      "@getify/proper-arrows/return": [
+        "error",
+        {
+          "object": true
+        }
+      ],
+      "@getify/proper-arrows/this": 0
+    }
+  }
+}
