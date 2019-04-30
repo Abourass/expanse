@@ -62,4 +62,9 @@ rc.rectangle(10, 10, 10, 100, {
   fill: 'rgba(38, 38, 54, 0.97)',
   fillStyle: 'solid',
   roughness: 2
+});
+rc.rectangle(10, 0, 100, 10, {
+  fill: 'rgba(38, 38, 54, 0.97)',
+  fillStyle: 'solid',
+  roughness: 2
 });`;
