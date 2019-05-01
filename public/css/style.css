@@ -115,3 +115,23 @@ a {
   text-align: center;
   line-height: 30px;
 }
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 1.5rem 2rem;
+  border-color: #000;
+  border-style: solid;
+  border-width: 4px;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}

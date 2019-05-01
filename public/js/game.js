@@ -117,13 +117,13 @@ function introClick(clickValue){
     nodeContent('introButton', 'Breathe');
     nodeContent('messageUI', 'You realize you\'re laying on cold concrete, in an alley of some sort. Your head swims..');
   } else if ( player.health === 15) {
-    let toggleNodeArray = ['introButton', 'findingHomeButton', 'moneyUIDesc', 'locationUIDesc', 'statPadding', 'map'];
+    let toggleNodeArray = ['introButton', 'findingHomeButton', 'moneyUIDesc', 'locationUIDesc', 'statPadding', 'map', 'tempFooter', 'siteFooter'];
     nodeVisToggle(toggleNodeArray, 'hidden');
     nodeContent('messageUI', 'You sit up and try to remember what happened.. or to remember anything at all. What happened, Why am I here, who am I?!?');
     nodeContent('moneyUI', player.money);
     nodeContent('locationUI', player.location);
     createMap();
-    createPlayer(0, 0);
+    createPlayer(36, 20);
   }
 }
 
