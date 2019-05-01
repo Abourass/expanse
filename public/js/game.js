@@ -107,12 +107,13 @@ function nodeContent(selectedNode, content) {
 function introClick(clickValue){
   player.incHealth(clickValue);
   nodeContent('healthUI', player.health);
-  iziToast.show({
-    title: 'Hey',
-    message: 'You\'re still Alive?',
-    position: 'topRight',
-  });
-  if (player.health === 5) {
+  if (player.health === 2) {
+    iziToast.show({
+      title: 'Hey',
+      message: 'You\'re still Alive?',
+      position: 'topRight',
+    });
+  } else if (player.health === 5) {
     nodeContent('introButton', 'Cough');
   } else if (player.health === 6 || player.health === 7) {
     nodeContent('messageUI', 'Your throat tightens painfully with each cough.');
