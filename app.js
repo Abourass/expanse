@@ -28,6 +28,7 @@ const User = require('./models/Users'); // ==========================> Import Mo
 
 const indexRouter = require('./routes/index'); // ========================> Load Routes <===========================================
 const usersRouter = require('./routes/users');
+const errorRouter = require('./routes/errorSystem');
 
 require('./bin/passport')(passport); // =========================> Passport Config <=======================================
 mongoose.connect(process.env.mongoURI, { useNewUrlParser: true }) // ======> Connect to our Database <===============================
@@ -77,10 +78,11 @@ app.use(express.static(path.join(__dirname, 'public'))); // ==========> Set stat
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/error', errorRouter);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
-  res.redirect('../../../errorSystem/404');
+  res.redirect('../../../error/404');
 });
 
 // error handler

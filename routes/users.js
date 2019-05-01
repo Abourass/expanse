@@ -6,4 +6,10 @@ router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
 
+router.get('/register', function(req, res, next) {
+  res.render('index/register', {
+    title: 'Register | Expanse',
+  })
+});
+
 module.exports = router;

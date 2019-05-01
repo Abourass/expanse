@@ -196,7 +196,9 @@ function enterHome(){
   sleepTight();
 }
 
+function createCharacter(){
 
+}
 
 // Map Script
 function createMap(stages) {
