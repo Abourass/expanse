@@ -115,8 +115,9 @@ function introClick(clickValue){
     });
   } else if (player.health === 5) {
     nodeContent('introButton', 'Cough');
-  } else if (player.health === 6 || player.health === 7) {
+  } else if (player.health === 6) {
     nodeContent('messageUI', 'Your throat tightens painfully with each cough.');
+  } else if (player.health === 7) {
     iziToast.show({
       title: 'Hmmm..',
       message: 'You should probably take it slow, you don\'t look so good.',
