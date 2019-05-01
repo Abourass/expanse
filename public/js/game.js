@@ -196,6 +196,8 @@ function enterHome(){
   sleepTight();
 }
 
+
+
 // Map Script
 function createMap(stages) {
   if (document.getElementById('mapBase')){
@@ -371,6 +373,8 @@ function sleepTight() {
         nodeContent('healthUI', player.health);
       } else {
         nodeContent('messageUI', 'In your sleep you hear whispers from something. You strain to hear what they are saying but you can\'t quite make it out. Suddenly, a loud voice says "Are you ready to begin? We will need some information from your first.."');
+        let nodeArray = ['enterHomeButton', 'createCharacterButton'];
+        nodeVisToggle(nodeArray, 'hidden');
       }
     }, 1000);
 }
