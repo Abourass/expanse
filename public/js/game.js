@@ -109,12 +109,18 @@ function introClick(clickValue){
   nodeContent('healthUI', player.health);
   iziToast.show({
     title: 'Hey',
-    message: 'You\'re still Alive?'
+    message: 'You\'re still Alive?',
+    position: 'topRight',
   });
   if (player.health === 5) {
     nodeContent('introButton', 'Cough');
   } else if (player.health === 6 || player.health === 7) {
     nodeContent('messageUI', 'Your throat tightens painfully with each cough.');
+    iziToast.show({
+      title: 'Hmmm..',
+      message: 'You should probably take it slow, you don\'t look so good.',
+      position: 'topRight',
+    });
   } else if (player.health === 8 || player.health === 9) {
     nodeContent('messageUI', 'A particularly hard cough leaves blood on the pavement next to your face. You are acutely aware of how raw your throat is. ');
   } else if (player.health === 10 ) {
