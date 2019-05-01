@@ -353,9 +353,12 @@ function deleteScripts() {
 }
 
 function sleepTight() {
-  window.setInterval(function () {
-    if (player.health < 100)
-    player.incHealth(5);
-    nodeContent('healthUI', player.health);
-  }, 1000);
+    window.setInterval(function () {
+      if (player.health < 100) {
+        player.incHealth(5);
+        nodeContent('healthUI', player.health);
+      } else {
+        nodeContent('messageUI', 'In your sleep you hear whispers from something. You strain to hear what they are saying but you can\'t quite make it out. Suddenly, a loud voice says "Are you ready to begin? We will need some information from your first.."');
+      }
+    }, 1000);
 }
