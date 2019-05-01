@@ -2,6 +2,8 @@
   <dictionary name="abourassa">
     <words>
       <w>csrf</w>
+      <w>ebadcsrftoken</w>
+      <w>exphbs</w>
     </words>
   </dictionary>
 </component>
