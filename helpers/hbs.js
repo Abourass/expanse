@@ -7,4 +7,10 @@ module.exports = {
       return `${b} ...`;
     }
     return a;
-  }};
+  },
+  openForm: function (action, autocomplete, preferredMethod, methodInval) {
+    if (methodInval === true) { return `<form action="${action}" autocomplete="${autocomplete}" method="${preferredMethod}"> <input type="hidden" name="_method" value="PUT">`; }
+    return `<form action="${action}" autocomplete="${autocomplete}" method="${preferredMethod}">`;
+  },
+  closeForm: function () { return '</form>'; }
+};

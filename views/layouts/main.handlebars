@@ -13,10 +13,38 @@
 <script src="https://rawgit.com/pshihn/rough/master/dist/rough.js"></script>
 <style> .hidden { display: none; } </style>
 <body>
-  <section class="section" style="padding-top: 0">
+  {{#unless login}}<section class="section" style="padding-top: 0">
     <div class="container">
       {{{body}}}
     </div>
   </section>
+  {{else}}
+  {{{body}}}
+  {{/unless}}
 </body>
+{{#if success_msg}}
+  <script>
+    iziToast.show({
+      title: 'Success',
+      message: ' {{success_msg}}',
+      position: 'topRight',
+    });
+  </script>
+{{else if error_msg}}
+  <script>
+    iziToast.show({
+      title: 'Error',
+      message: ' {{error_msg}}',
+      position: 'topRight',
+    });
+  </script>
+{{else if error}}
+  <script>
+    iziToast.show({
+      title: 'Error',
+      message: ' {{error}}',
+      position: 'topRight',
+    });
+  </script>
+{{/if}}
 </html>

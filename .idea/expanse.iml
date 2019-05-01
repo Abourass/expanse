@@ -11,7 +11,10 @@
     <orderEntry type="library" name="rough" level="application" />
     <orderEntry type="library" name="iziModal" level="application" />
     <orderEntry type="library" name="iziToast" level="application" />
-    <orderEntry type="library" name="jquery-3.4.0.slim" level="application" />
     <orderEntry type="library" name="jquery-3.4.0" level="application" />
+    <orderEntry type="library" name="all" level="application" />
+    <orderEntry type="library" name="anime" level="application" />
+    <orderEntry type="library" name="@types/csurf" level="application" />
+    <orderEntry type="library" name="@types/express" level="application" />
   </component>
 </module>

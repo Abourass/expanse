@@ -3,30 +3,13 @@ const Schema = mongoose.Schema;
 
 // Create Schema
 const UserSchema = new Schema({
-  firstName: {
+  fullName: {
     type: String,
   },
-  middleName: {
+  username: {
     type: String,
-  },
-  lastName: {
-    type: String,
-  },
-  birthday: {
-    type: Date,
-    format: 'MMMM Do YYYY',
-  },
-  gender: {
-    type: String,
-    default: 'undisclosed',
   },
   email: {
-    type: String,
-  },
-  phoneNumber: {
-    type: String,
-  },
-  phoneType: {
     type: String,
   },
   password: {

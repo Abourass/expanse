@@ -44,11 +44,11 @@ app.use(bodyParser.json());
 app.use(methodOverride('_method')); // =============================> Method Override Middleware <=============================
 
 const { // =========================================================> Handlebars Helpers & Middleware <========================
-  truncate, formatDateBasic, formatDate, relativeTime, formatUnderscore, formatBoolean, formatErrorArray, handyString, activePage, dropdownOpen, eSigFont, eSigFontURL, editIcon, editIconBox, deleteIconBox, curTime, openForm, closeForm, contains, formatSocial, fab, rfab, div, _div, colorSwitch, randomNum, groupManager, logo, formatCap, projectTranslator, eachIndex, eachLast, firstLetter, proximityFriendly, formatCommas, randomNumHigh, randomNumSmall,
+  truncate, openForm, closeForm,
 } = require('./helpers/hbs');
 app.engine('.handlebars', exphbs({
   helpers: {
-    truncate: truncate, formatDateBasic: formatDateBasic, formatDate: formatDate, relativeTime: relativeTime, formatUnderscore: formatUnderscore, formatBoolean: formatBoolean, formatErrorArray: formatErrorArray, handyString: handyString, activePage: activePage, dropdownOpen: dropdownOpen, eSigFont: eSigFont, eSigFontURL: eSigFontURL, editIcon: editIcon, editIconBox: editIconBox, deleteIconBox: deleteIconBox, curTime: curTime, openForm: openForm, closeForm: closeForm, contains: contains, formatSocial: formatSocial, fab: fab, rfab: rfab, div: div, _div: _div, colorSwitch: colorSwitch, randomNum: randomNum, groupManager: groupManager, logo: logo, formatCap: formatCap, projectTranslator: projectTranslator, eachIndex: eachIndex, eachLast: eachLast, firstLetter: firstLetter, proximityFriendly: proximityFriendly, formatCommas: formatCommas, randomNumHigh: randomNumHigh, randomNumSmall: randomNumSmall,
+    truncate: truncate, openForm: openForm, closeForm: closeForm,
   },
   defaultLayout: 'main',
   partialsDir: ['./views/partials/'],
