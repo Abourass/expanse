@@ -152,9 +152,9 @@ function findingHomeClick(clickValue){
     redrawMap();
     createPlayer(yPosition, xPosition);
   } else if ( player.awareness >= 17 && player.awareness <= 20) {
-    player.setLocation('the city. You\'re standing at the mouth of the alley where you awoke.');
+    player.setLocation('The City');
     nodeContent('messageUI', 'After limping to the end of the alley you\'ve made it to an unfamiliar street. Where to now?');
-    nodeContent('locationUI', player.location);
+    nodeContent('locationUILeveled', player.location);
     player.incAwareness(clickValue);
     yPosition += clickValue / 4;
     xPosition += clickValue * 4;
@@ -176,7 +176,7 @@ function findingHomeClick(clickValue){
 }
 
 function goLeft() {
-  player.setLocation('awe at finding your home.');
+  player.setLocation('In front of a home');
   nodeContent('locationUILeveled', player.location);
   nodeContent('messageUI', 'You head left, down the street. You begin to see some familiar buildings, so trusting your instincts you continue where feels most familiar. It isn\'t long before you find yourself in front of house that feels as if it must be home, even if you have no specific memories of living there.');
   let toggleNodeArray = ['map', 'goLeftButton', 'goRightButton', 'enterHomeButton'];
@@ -184,7 +184,7 @@ function goLeft() {
 }
 
 function goRight(){
-  player.setLocation('awe at finding your home.');
+  player.setLocation('In front of a home.');
   nodeContent('locationUILeveled', player.location);
   nodeContent('messageUI', 'You head right, down the street. You begin to see some familiar buildings, so trusting your instincts you continue where feels most familiar. It isn\'t long before you find yourself in front of house that feels as if it must be home, even if you have no specific memories of living there.');
   let toggleNodeArray = ['map', 'goLeftButton', 'goRightButton', 'enterHomeButton'];
@@ -192,7 +192,7 @@ function goRight(){
 }
 
 function enterHome(){
-  player.setLocation('deep rest, on top the oh-so-comfy carpet.');
+  player.setLocation('Home');
   nodeContent('locationUILeveled', player.location);
   nodeContent('messageUI', 'You enter your home, and as the wave of adrenalin leaves you, you pass out on the floor');
   sleepTight();
