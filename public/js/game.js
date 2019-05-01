@@ -160,9 +160,29 @@ function findingHomeClick(clickValue){
     createPlayer(yPosition, xPosition);
     let toggleNodeArray = ['findingHomeButton', 'goLeftButton', 'goRightButton'];
     nodeVisToggle(toggleNodeArray, 'hidden');
-  } else if (player.awareness === 28) {
-
   }
+}
+
+function goLeft() {
+  player.setLocation('awe at finding your home.');
+  nodeContent('locationUIBar', player.location);
+  nodeContent('messageUI', 'You head left, down the street. You begin to see some familiar buildings, so trusting your instincts you continue where feels most familiar. It isn\'t long before you find yourself in front of house that feels as if it must be home, even if you have no specific memories of living there.');
+  let toggleNodeArray = ['map', 'goLeftButton', 'goRightButton', 'enterHomeButton'];
+  nodeVisToggle(toggleNodeArray, 'hidden');
+}
+
+function goRight(){
+  player.setLocation('awe at finding your home.');
+  nodeContent('locationUIBar', player.location);
+  nodeContent('messageUI', 'You head right, down the street. You begin to see some familiar buildings, so trusting your instincts you continue where feels most familiar. It isn\'t long before you find yourself in front of house that feels as if it must be home, even if you have no specific memories of living there.');
+  let toggleNodeArray = ['map', 'goLeftButton', 'goRightButton', 'enterHomeButton'];
+  nodeVisToggle(toggleNodeArray, 'hidden');
+}
+
+function enterHome(){
+  player.setLocation('deep rest, on top the oh-so-comfy carpet.');
+  nodeContent('locationUIBar', player.location);
+  nodeContent('messageUI', 'You enter your home, and as the wave of adrenalin leaves you, you pass out on the floor');
 }
 
 // Map Script
