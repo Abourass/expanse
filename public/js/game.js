@@ -177,7 +177,7 @@ function findingHomeClick(clickValue){
 
 function goLeft() {
   player.setLocation('awe at finding your home.');
-  nodeContent('locationUI', player.location);
+  nodeContent('locationUILeveled', player.location);
   nodeContent('messageUI', 'You head left, down the street. You begin to see some familiar buildings, so trusting your instincts you continue where feels most familiar. It isn\'t long before you find yourself in front of house that feels as if it must be home, even if you have no specific memories of living there.');
   let toggleNodeArray = ['map', 'goLeftButton', 'goRightButton', 'enterHomeButton'];
   nodeVisToggle(toggleNodeArray, 'hidden');
@@ -185,7 +185,7 @@ function goLeft() {
 
 function goRight(){
   player.setLocation('awe at finding your home.');
-  nodeContent('locationUI', player.location);
+  nodeContent('locationUILeveled', player.location);
   nodeContent('messageUI', 'You head right, down the street. You begin to see some familiar buildings, so trusting your instincts you continue where feels most familiar. It isn\'t long before you find yourself in front of house that feels as if it must be home, even if you have no specific memories of living there.');
   let toggleNodeArray = ['map', 'goLeftButton', 'goRightButton', 'enterHomeButton'];
   nodeVisToggle(toggleNodeArray, 'hidden');
@@ -193,7 +193,7 @@ function goRight(){
 
 function enterHome(){
   player.setLocation('deep rest, on top the oh-so-comfy carpet.');
-  nodeContent('locationUI', player.location);
+  nodeContent('locationUILeveled', player.location);
   nodeContent('messageUI', 'You enter your home, and as the wave of adrenalin leaves you, you pass out on the floor');
   sleepTight();
 }
@@ -374,7 +374,7 @@ function sleepTight() {
     window.setInterval(function () {
       if (player.health < 100) {
         player.incHealth(5);
-        nodeContent('healthUI', player.health);
+        nodeContent('healthUILeveled', player.health);
       } else {
         nodeContent('messageUI', 'In your sleep you hear whispers from something. You strain to hear what they are saying but you can\'t quite make it out. Suddenly, a loud voice says "Are you ready to begin? We will need some information from your first.."');
         let nodeArray = ['enterHomeButton', 'createCharacterButton'];
