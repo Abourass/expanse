@@ -107,6 +107,10 @@ function nodeContent(selectedNode, content) {
 function introClick(clickValue){
   player.incHealth(clickValue);
   nodeContent('healthUI', player.health);
+  iziToast.show({
+    title: 'Hey',
+    message: 'You\'re still Alive?'
+  });
   if (player.health === 5) {
     nodeContent('introButton', 'Cough');
   } else if (player.health === 6 || player.health === 7) {
