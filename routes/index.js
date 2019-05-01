@@ -8,4 +8,10 @@ router.get('/', function(req, res, next) {
   });
 });
 
+router.get('/map', function(req, res, next) {
+  res.render('index/mapCreator', {
+    title: 'Map Creator | Expanse'
+  });
+});
+
 module.exports = router;

@@ -8,10 +8,10 @@
 <div id="barStats" class="hidden">
   <div id="awareStats">
     <div id="healthBarHolder">
-      <div id="healthBar">Health</div>
+      <div id="healthBar">&nbsp;Health</div>
     </div>
     <div id="awareBarHolder">
-      <div id="awareBar">Awareness</div>
+      <div id="awareBar">&nbsp;Awareness</div>
     </div>
   </div>
     <p id="moneyUIBarDesc">You currently have $<span id="moneyUIBar">0</span></p>
@@ -26,6 +26,8 @@
 <p id="messageUI">&nbsp;</p>
 <button type="button" onClick="introClick(1)" id="introButton" class="simpleButton is-black">Panic!</button>
 <button type="button" onClick="findingHomeClick(4)" id="findingHomeButton" class="hidden simpleButton">Look Around</button>
+<button type="button" onClick="goLeft()" id="goLeftButton" class="hidden simpleButton">Go Left</button>
+<button type="button" onClick="goRight()" id="goRightButton" class="hidden simpleButton">Go Right</button>
 <br />
 
 <section id="map" class="hidden nes-container with-title is-centered">

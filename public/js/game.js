@@ -122,7 +122,7 @@ function introClick(clickValue){
     nodeContent('messageUI', 'You sit up and try to remember what happened.. or to remember anything at all. What happened, Why am I here, who am I?!?');
     nodeContent('moneyUI', player.money);
     nodeContent('locationUI', player.location);
-    createMap();
+    createMap(1);
     createPlayer(36, 20);
   }
 }
@@ -134,30 +134,39 @@ function findingHomeClick(clickValue){
     yPosition += clickValue / 4;
     xPosition += clickValue * 4;
     clearCanvas();
-    createMap();
+    createMap(1);
     redrawMap();
     createPlayer(yPosition, xPosition);
   } else if ( player.awareness >= 17 && player.awareness <= 20) {
     let toggleNodeArray = ['basicStats', 'barStats'];
     player.setLocation('the city. You\'re standing at the mouth of the alley where you awoke.');
-    nodeContent('messageUI', 'After limping to the end of the alley you\'ve made it to the street. Where to now?');
+    nodeContent('messageUI', 'After limping to the end of the alley you\'ve made it to an unfamiliar street. Where to now?');
     nodeContent('locationUIBar', player.location);
     nodeVisToggle(toggleNodeArray, 'hidden');
     player.incAwareness(clickValue);
     yPosition += clickValue / 4;
     xPosition += clickValue * 4;
     clearCanvas();
-    createMap();
+    createMap(1);
     redrawMap();
     createPlayer(yPosition, xPosition);
-  } else if ( player.awareness >= 21) {
-    nodeContent('messageUI', 'After limping to the end of the alley you\'ve made it to the street.  Where to now?')
+  } else if ( player.awareness === 24) {
+    nodeContent('messageUI', 'After limping to the end of the alley you\'ve made it to an unfamiliar street. Where to now?');
     deleteScripts();
+    createMap(2);
+    player.incAwareness(clickValue);
+    yPosition += clickValue / 4;
+    xPosition += clickValue * 4;
+    createPlayer(yPosition, xPosition);
+    let toggleNodeArray = ['findingHomeButton', 'goLeftButton', 'goRightButton'];
+    nodeVisToggle(toggleNodeArray, 'hidden');
+  } else if (player.awareness === 28) {
+
   }
 }
 
 // Map Script
-function createMap() {
+function createMap(stages) {
   if (document.getElementById('mapBase')){
     document.getElementById('mapBase').remove();
   }
@@ -185,13 +194,60 @@ rc.rectangle(10, 0, 70, 10, {
 });
 
 `;
-  try {
-    magicMapBase.appendChild(document.createTextNode(magicMapHeader));
-    magicMapBase.appendChild(document.createTextNode(magicMapPlaces));
-    document.body.appendChild(magicMapBase);
-  } catch(err) {
-    magicMapBase.text = magicMapHeader + magicMapPlaces;
-    document.body.appendChild(magicMapBase);
+  let magicMapStageTwoHeader = `const ac = rough.canvas(document.getElementById('canvas'));
+
+`;
+  let magicMapStageTwo = `// Map Below
+  //alley
+  ac.rectangle(70, 10, 10, 100, {
+  fill: 'rgba(38, 38, 54, 0.97)',
+  fillStyle: 'solid',
+  roughness: 2
+});
+ac.rectangle(10, 10, 10, 100, {
+  fill: 'rgba(38, 38, 54, 0.97)',
+  fillStyle: 'solid',
+  roughness: 2
+});
+ac.rectangle(10, 0, 70, 10, {
+  fill: 'rgba(38, 38, 54, 0.97)',
+  fillStyle: 'solid',
+  roughness: 2
+});
+// end alley
+// Lower left
+ac.rectangle(0, 100, 10, 10, {
+  fill: 'rgba(38, 38, 54, 0.97)',
+  fillStyle: 'solid',
+  roughness: 2
+});
+
+// Lower Right horizontal street
+ac.rectangle(70, 100, 1000, 10, {
+  fill: 'rgba(38, 38, 54, 0.97)',
+  fillStyle: 'solid',
+  roughness: 2
+});
+
+`;
+  if (stages === 1) {
+    try {
+      magicMapBase.appendChild(document.createTextNode(magicMapHeader));
+      magicMapBase.appendChild(document.createTextNode(magicMapPlaces));
+      document.body.appendChild(magicMapBase);
+    } catch (err) {
+      magicMapBase.text = magicMapHeader + magicMapPlaces;
+      document.body.appendChild(magicMapBase);
+    }
+  } else if (stages === 2) {
+    try {
+      magicMapBase.appendChild(document.createTextNode(magicMapStageTwoHeader));
+      magicMapBase.appendChild(document.createTextNode(magicMapStageTwo));
+      document.body.appendChild(magicMapBase);
+    } catch (err) {
+      magicMapBase.text = magicMapStageTwoHeader + magicMapStageTwo;
+      document.body.appendChild(magicMapBase);
+    }
   }
 }
 
