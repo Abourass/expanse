@@ -138,11 +138,9 @@ function findingHomeClick(clickValue){
     redrawMap();
     createPlayer(yPosition, xPosition);
   } else if ( player.awareness >= 17 && player.awareness <= 20) {
-    let toggleNodeArray = ['basicStats', 'barStats'];
     player.setLocation('the city. You\'re standing at the mouth of the alley where you awoke.');
     nodeContent('messageUI', 'After limping to the end of the alley you\'ve made it to an unfamiliar street. Where to now?');
-    nodeContent('locationUIBar', player.location);
-    nodeVisToggle(toggleNodeArray, 'hidden');
+    nodeContent('locationUI', player.location);
     player.incAwareness(clickValue);
     yPosition += clickValue / 4;
     xPosition += clickValue * 4;
@@ -165,7 +163,7 @@ function findingHomeClick(clickValue){
 
 function goLeft() {
   player.setLocation('awe at finding your home.');
-  nodeContent('locationUIBar', player.location);
+  nodeContent('locationUI', player.location);
   nodeContent('messageUI', 'You head left, down the street. You begin to see some familiar buildings, so trusting your instincts you continue where feels most familiar. It isn\'t long before you find yourself in front of house that feels as if it must be home, even if you have no specific memories of living there.');
   let toggleNodeArray = ['map', 'goLeftButton', 'goRightButton', 'enterHomeButton'];
   nodeVisToggle(toggleNodeArray, 'hidden');
@@ -173,7 +171,7 @@ function goLeft() {
 
 function goRight(){
   player.setLocation('awe at finding your home.');
-  nodeContent('locationUIBar', player.location);
+  nodeContent('locationUI', player.location);
   nodeContent('messageUI', 'You head right, down the street. You begin to see some familiar buildings, so trusting your instincts you continue where feels most familiar. It isn\'t long before you find yourself in front of house that feels as if it must be home, even if you have no specific memories of living there.');
   let toggleNodeArray = ['map', 'goLeftButton', 'goRightButton', 'enterHomeButton'];
   nodeVisToggle(toggleNodeArray, 'hidden');
@@ -181,8 +179,9 @@ function goRight(){
 
 function enterHome(){
   player.setLocation('deep rest, on top the oh-so-comfy carpet.');
-  nodeContent('locationUIBar', player.location);
+  nodeContent('locationUI', player.location);
   nodeContent('messageUI', 'You enter your home, and as the wave of adrenalin leaves you, you pass out on the floor');
+  sleepTight();
 }
 
 // Map Script
@@ -351,4 +350,12 @@ function deleteScripts() {
   if (document.getElementById('mapPlayerScript')){
     document.getElementById('mapPlayerScript').remove();
   }
+}
+
+function sleepTight() {
+  window.setInterval(function () {
+    if (player.health < 100)
+    player.incHealth(5);
+    nodeContent('healthUI', player.health);
+  }, 1000);
 }
