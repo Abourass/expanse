@@ -1,10 +1,4 @@
-<h1 id="simpleTitle">{{title}}</h1>
-<div id="basicStats" class="">
-  <p>You currently have <span id="healthUI">1</span> health</p>
-  <p id="moneyUIDesc" class="hidden">You currently have $<span id="moneyUI">0</span></p>
-  <p id="locationUIDesc" class="hidden">You are in <span id="locationUI"></span>.</p>
-</div>
-<div id="stats-is-leveled" class="hidden">
+<div id="stats-is-leveled">
   <nav class="level is-mobile">
     <div class="level-item has-text-centered">
       <div>
@@ -29,8 +23,7 @@
     </div>
     <div class="level-item has-text-centered">
       <div>
-        <p class="heading">???</p>
-        <p id="" class="title">???</p>
+        <p class="heading">{{#if user}}<a href="../../users/logout">Logout</a>{{else}}<a href="../../users/login">Login</a>{{/if}}</p>
       </div>
     </div>
   </nav>
@@ -40,9 +33,7 @@
   &nbsp;
 </div>
 
-<p id="messageUI">&nbsp;</p>
-
-<article id="refinedMessageUI" class="media hidden">
+<article id="refinedMessageUI" class="media">
   <div class="media-content">
     <div class="content">
       <p>

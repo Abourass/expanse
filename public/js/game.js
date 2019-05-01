@@ -106,7 +106,7 @@ function nodeContent(selectedNode, content) {
 // Click Functions
 function introClick(clickValue){
   player.incHealth(clickValue);
-  nodeContent('healthUI', player.health);
+  nodeContent('healthUILeveled', player.health);
   if (player.health === 2) {
     iziToast.show({
       title: 'Hey',
@@ -116,7 +116,7 @@ function introClick(clickValue){
   } else if (player.health === 5) {
     nodeContent('introButton', 'Cough');
   } else if (player.health === 6) {
-    nodeContent('messageUI', 'Your throat tightens painfully with each cough.');
+    nodeContent('messageUI2', 'Your throat tightens painfully with each cough.');
   } else if (player.health === 7) {
     iziToast.show({
       title: 'Hmmm..',
@@ -124,12 +124,12 @@ function introClick(clickValue){
       position: 'topRight',
     });
   } else if (player.health === 8 || player.health === 9) {
-    nodeContent('messageUI', 'A particularly hard cough leaves blood on the pavement next to your face. You are acutely aware of how raw your throat is. ');
+    nodeContent('messageUI2', 'A particularly hard cough leaves blood on the pavement next to your face. You are acutely aware of how raw your throat is. ');
   } else if (player.health === 10 ) {
     nodeContent('introButton', 'Breathe');
-    nodeContent('messageUI', 'You realize you\'re laying on cold concrete, in an alley of some sort. Your head swims..');
+    nodeContent('messageUI2', 'You realize you\'re laying on cold concrete, in an alley of some sort. Your head swims..');
   } else if ( player.health === 15) {
-    let toggleNodeArray = ['introButton', 'findingHomeButton', 'moneyUIDesc', 'locationUIDesc', 'statPadding', 'map', 'basicStats', 'stats-is-leveled', 'simpleTitle', 'messageUI', 'refinedMessageUI'];
+    let toggleNodeArray = ['introButton', 'findingHomeButton', 'map'];
     nodeVisToggle(toggleNodeArray, 'hidden');
     nodeContent('messageUI2', 'You sit up and try to remember what happened.. or to remember anything at all. What happened, Why am I here, who am I?!?');
     nodeContent('healthUILeveled', player.health);
