@@ -19,6 +19,7 @@ router.get('/register', csrfProtection, function(req, res, next) {
   res.render('users/register', {
     title: 'Register | Expanse',
     csrfToken: req.csrfToken(),
+    login: true
   })
 });
 

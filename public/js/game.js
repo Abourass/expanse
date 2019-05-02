@@ -210,7 +210,7 @@ function createMap(stages) {
   const magicMapBase = document.createElement('script');
   magicMapBase.type = 'text/javascript';
   magicMapBase.id = 'mapBase';
-  let magicMapHeader = `const rc = rough.canvas(document.getElementById('canvas'));
+  let magicMapHeader = `const rc = rough.canvas(document.getElementById('canvas'), { workerURL: './worker.js' });
 
 `;
   let magicMapPlaces = `// Map Below

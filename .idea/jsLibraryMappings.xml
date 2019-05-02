@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="JavaScriptLibraryMappings">
-    <file url="PROJECT" libraries="{@types/csurf, @types/express, all, anime, iziModal, iziToast, jquery-3.4.0, rough}" />
+    <file url="PROJECT" libraries="{@types/csurf, @types/express, all, anime, iziModal, iziToast, jquery-3.4.0, rough, rough-async}" />
     <includedPredefinedLibrary name="Node.js Core" />
   </component>
 </project>

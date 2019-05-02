@@ -1,57 +1,103 @@
-{{{openForm '/users/register' false 'POST' false}}}
-<input type="hidden" name="_csrf" value="{{csrfToken}}">
-<div class="field">
-  <label class="label" for="fullName">Name</label>
-  <div class="control">
-    <input class="input" type="text" placeholder="Full Name" name="fullName" id="fullName">
+<style>
+  html,body {
+    font-size: 14px;
+    font-weight: 300;
+    background: #F2F6FA;
+    padding: 0 !important;
+  }
+  .hero.is-success {
+    background: #F2F6FA;
+  }
+  .hero .nav, .hero.is-success .nav {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  .box {
+    margin-top: 5rem;
+  }
+  .avatar {
+    margin-top: -70px;
+    padding-bottom: 20px;
+  }
+  .avatar img {
+    padding: 5px;
+    background: #fff;
+    border-radius: 50%;
+    -webkit-box-shadow: 0 2px 3px rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.1);
+    box-shadow: 0 2px 3px rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.1);
+  }
+  input {
+    font-weight: 300;
+  }
+  p {
+    font-weight: 700;
+  }
+  p.subtitle {
+    padding-top: 1rem;
+  }
+</style>
+<section class="hero is-success is-fullheight" style="padding-top: 0">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <div class="column is-4 is-offset-4">
+        <div class="box">
+          <figure class="avatar">
+            <img src="../../img/logo.png">
+          </figure>
+          {{{openForm '/users/register' false 'POST' false}}}
+          <input type="hidden" name="_csrf" value="{{csrfToken}}">
+          <div class="field">
+            <label class="label" for="fullName">Name</label>
+            <div class="control">
+              <input class="input" type="text" placeholder="Full Name" name="fullName" id="fullName">
+            </div>
+          </div>
+          <div class="field">
+            <label class="label" for="username">Username</label>
+            <div class="control">
+              <input class="input" type="text" placeholder="Character's Name" name="username" id="username">
+            </div>
+          </div>
+          <div class="field">
+            <label class="label" for="email">Email</label>
+            <div class="control">
+              <input class="input" type="email" placeholder="Email" name="email" id="email">
+            </div>
+          </div>
+          <div class="field">
+            <label class="label" for="password">Password</label>
+            <div class="control">
+              <input class="input" type="password" placeholder="Password" name="password" id="password">
+            </div>
+          </div>
+          <div class="field">
+            <label class="label" for="passwordConf">Password (Confirm)</label>
+            <div class="control">
+              <input class="input" type="password" placeholder="Password" name="passwordConf" id="passwordConf">
+            </div>
+          </div>
+          <br />
+          <div class="field has-text-centered">
+            I am not a (secret) robot
+            <div class="control has-text-centered" style="padding-top:.3rem">
+              <label class="radio">
+                <input type="radio" name="question">
+                True
+              </label>
+              <label class="radio">
+                <input type="radio" name="question">
+                False
+              </label>
+            </div>
+          </div>
+          <div class="field is-grouped" style="justify-content: center">
+            <div class="control">
+              <button class="button is-link is-medium">Submit</button>
+            </div>
+          </div>
+          {{{closeForm}}}
+        </div>
+      </div>
+    </div>
   </div>
-</div>
-
-<div class="field">
-  <label class="label" for="username">Username</label>
-  <div class="control">
-    <input class="input" type="text" placeholder="Character's Name" name="username" id="username">
-  </div>
-</div>
-
-<div class="field">
-  <label class="label" for="email">Email</label>
-  <div class="control">
-    <input class="input" type="email" placeholder="Email" name="email" id="email">
-  </div>
-</div>
-
-<div class="field">
-  <label class="label" for="password">Password</label>
-  <div class="control">
-    <input class="input" type="password" placeholder="password" name="password" id="password">
-  </div>
-</div>
-<div class="field">
-  <label class="label" for="passwordConf">Password (Confirm)</label>
-  <div class="control">
-    <input class="input" type="password" placeholder="password" name="passwordConf" id="passwordConf">
-  </div>
-</div>
-
-<br />
-<div class="field">
-  I am not a (secret) robot
-  <div class="control">
-    <label class="radio">
-      <input type="radio" name="question">
-      True
-    </label>
-    <label class="radio">
-      <input type="radio" name="question">
-      False
-    </label>
-  </div>
-</div>
-
-<div class="field is-grouped">
-  <div class="control">
-    <button class="button is-link">Submit</button>
-  </div>
-</div>
-{{{closeForm}}}
+</section>

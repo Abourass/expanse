@@ -16,5 +16,6 @@
     <orderEntry type="library" name="anime" level="application" />
     <orderEntry type="library" name="@types/csurf" level="application" />
     <orderEntry type="library" name="@types/express" level="application" />
+    <orderEntry type="library" name="rough-async" level="application" />
   </component>
 </module>
