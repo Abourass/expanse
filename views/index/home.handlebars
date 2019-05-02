@@ -33,29 +33,50 @@
   &nbsp;
 </div>
 
-<article id="refinedMessageUI" class="media">
-  <div class="media-content">
-    <div class="content">
-      <p>
-        <strong>The Story so Far</strong>
-        <br>
-        <span id="messageUI2"></span>
-      </p>
-      <button type="button" onClick="goLeft()" id="goLeftButton" class="hidden simpleButton is-medium">Go Left</button>
-      <button type="button" onClick="goRight()" id="goRightButton" class="hidden simpleButton is-medium">Go Right</button>
-      <button type="button" onClick="enterHome()" id="enterHomeButton" class="hidden simpleButton is-medium">Enter Home</button>
-      <button type="button" onClick="createCharacter()" id="createCharacterButton" class="hidden simpleButton is-medium">Create Character</button>
+<section id="messageAndMap" class="columns">
+  <article id="refinedMessageUI" class="column is-half">
+    <div class="columns">
+      <div class="column is-full">
+        <div class="card">
+          <header class="card-header">
+            <p class="card-header-title">
+              Actions
+            </p>
+          </header>
+          <div class="card-content">
+            <div class="content">
+              <button type="button" onClick="introClick(1)" id="introButton" class="button is-black is-medium">Panic!</button>
+              <button type="button" onClick="findingHomeClick(4)" id="findingHomeButton" class="hidden button is-info is-medium">Look Around</button>
+              <button type="button" onClick="goLeft()" id="goLeftButton" class="hidden button is-info is-medium">Go Left</button>
+              <button type="button" onClick="goRight()" id="goRightButton" class="hidden button is-info is-medium">Go Right</button>
+              <button type="button" onClick="enterHome()" id="enterHomeButton" class="hidden button is-info is-medium">Enter Home</button>
+              <button type="button" onClick="createCharacter()" id="createCharacterButton" class="hidden button is-info is-medium">Create Character</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</article>
+    <div class="columns">
+      <div class="column is-full">
+        <div class="card">
+          <header class="card-header">
+            <p class="card-header-title">
+              The Story So Far..
+            </p>
+          </header>
+          <div class="card-content">
+            <div class="content">
+              <span id="messageUI2"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
 
-<button type="button" onClick="introClick(1)" id="introButton" class="simpleButton is-black is-medium">Panic!</button>
-<button type="button" onClick="findingHomeClick(4)" id="findingHomeButton" class="hidden simpleButton is-medium">Look Around</button>
-<br />
+  <section id="map" class="hidden nes-container with-title is-centered">
+    <p class="title">Map - <span id="locationUILeveled"></span></p>
+    <canvas id="canvas" width="400" height="400"></canvas>
+  </section>
 
-<section id="map" class="hidden nes-container with-title is-centered">
-  <p class="title">Map - <span id="locationUILeveled"></span></p>
-  <canvas id="canvas" width="400" height="400"></canvas>
 </section>
-
-
