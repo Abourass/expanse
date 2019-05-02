@@ -44,7 +44,8 @@
           <figure class="avatar">
             <img src="../../img/logo.png">
           </figure>
-          <form>
+          {{{openForm '/users/login' false 'POST' false}}}
+          <input type="hidden" name="_csrf" value="{{csrfToken}}">
             <div class="field">
               <div class="control">
                 <input class="input is-large" type="email" placeholder="Your Email" autofocus="">
@@ -63,7 +64,7 @@
               </label>
             </div>
             <button class="button is-block is-info is-large is-fullwidth">Login</button>
-          </form>
+          {{{closeForm}}}
         </div>
         <p class="is-centered">
           <a href="../../users/register" class="button is-info is-outlined">Sign Up</a>

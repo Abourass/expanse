@@ -1,4 +1,5 @@
 const express = require('express');
+const passport = require('passport');
 const csrf = require('csurf');
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
@@ -6,6 +7,7 @@ const router = express.Router();
 const bodyParser = require('body-parser');
 const csrfProtection = csrf({ cookie: true });
 const parseForm = bodyParser.urlencoded({ extended: false });
+const { ensureAuthenticated } = require('../helpers/auth');
 
 const User = mongoose.model('users'); // ===============================================> Load User Schema <====================
 
@@ -76,6 +78,20 @@ router.get('/login', csrfProtection, function(req, res, next) {
     csrfToken: req.csrfToken(),
     login: true
   })
+});
+
+router.post('/login', (req, res, next) => { // ===================================================> Login - POST <===================================
+  passport.authenticate('local', {
+    successRedirect: '/dashboard',
+    failureRedirect: '/',
+    failureFlash: true,
+  })(req, res, next);
+});
+
+router.get('/logout', (req, res) => { // =========================================================> Logout - POST <==================================
+  req.logout();
+  req.flash('success_msg', 'You are now logged out');
+  res.redirect('/');
 });
 
 module.exports = router;
