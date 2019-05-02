@@ -26,13 +26,13 @@ router.get('/register', csrfProtection, function(req, res, next) {
 /* PUT registration page */
 router.post('/register', csrfProtection, function(req, res, next) {
   const errorArray = [];
-  if (req.body.fullName.length === 0) { errorArray.push({error: 'You must provide a name. Might I suggest Jon Doe? Or maybe Rusty Shakleford?' }); }
+  if (req.body.fullName.length === 0) { errorArray.push({error: 'You must provide a name. <br /> Might I suggest Jon Doe? Or maybe Rusty Shackleford?' }); }
   if (req.body.email.length === 0) { errorArray.push({error: 'You must provide an email address to sign up. It\'s how you log in. C\'mon you knew that...' }); }
   if (req.body.password.length === 0) { errorArray.push({error: 'You must provide a password to sign up.' }); }
   if (req.body.password.length > 1 && req.body.password !== req.body.passwordConf) { errorArray.push({ error: 'Passwords do not match.' }); }
   if (req.body.password.length > 1 && req.body.password.length < 5) { errorArray.push({ error: 'Password does not meet complexity requirements.' }); }
   if (errorArray.length > 0) {
-    res.render('index/register', {
+    res.render('users/register', {
       errorArray: errorArray,
       errorIsTrue: true,
       fullName: req.body.fullName,

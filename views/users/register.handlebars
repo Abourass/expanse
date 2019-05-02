@@ -40,6 +40,9 @@
   <div class="hero-body">
     <div class="container has-text-centered">
       <div class="column is-4 is-offset-4">
+        {{#each errorArray}}
+          <p class="has-text-danger">{{{error}}}</p>
+        {{/each}}
         <div class="box">
           <figure class="avatar">
             <img src="../../img/logo.png">
@@ -49,31 +52,31 @@
           <div class="field">
             <label class="label" for="fullName">Name</label>
             <div class="control">
-              <input class="input" type="text" placeholder="Full Name" name="fullName" id="fullName">
+              <input class="input" type="text" placeholder="Full Name" name="fullName" id="fullName" {{#if fullName}}value="{{fullName}}"{{/if}}>
             </div>
           </div>
           <div class="field">
             <label class="label" for="username">Username</label>
             <div class="control">
-              <input class="input" type="text" placeholder="Character's Name" name="username" id="username">
+              <input class="input" type="text" placeholder="Character's Name" name="username" id="username" {{#if username}}value="{{username}}"{{/if}}>
             </div>
           </div>
           <div class="field">
             <label class="label" for="email">Email</label>
             <div class="control">
-              <input class="input" type="email" placeholder="Email" name="email" id="email">
+              <input class="input" type="email" placeholder="Email" name="email" id="email" {{#if email}}value="{{email}}"{{/if}}>
             </div>
           </div>
           <div class="field">
             <label class="label" for="password">Password</label>
             <div class="control">
-              <input class="input" type="password" placeholder="Password" name="password" id="password">
+              <input class="input" type="password" placeholder="Password" name="password" id="password" {{#if password}}value="{{password}}"{{/if}}>
             </div>
           </div>
           <div class="field">
             <label class="label" for="passwordConf">Password (Confirm)</label>
             <div class="control">
-              <input class="input" type="password" placeholder="Password" name="passwordConf" id="passwordConf">
+              <input class="input" type="password" placeholder="Password" name="passwordConf" id="passwordConf" {{#if passwordConf}}value="{{passwordConf}}"{{/if}}>
             </div>
           </div>
           <br />
