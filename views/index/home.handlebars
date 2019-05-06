@@ -23,7 +23,7 @@
     </div>
     <div class="level-item has-text-centered">
       <div>
-        <p class="heading">{{#if user}}<a href="../../users/logout">Logout</a>{{else}}<a href="../../users/login">Login</a>{{/if}}</p>
+        <p class="heading">{{#if user}}<a href="../../users/logout">Logout ({{user.username}})</a>{{else}}<a href="../../users/login">Login</a>{{/if}}</p>
       </div>
     </div>
   </nav>
@@ -45,12 +45,14 @@
           </header>
           <div class="card-content">
             <div class="content">
+              {{#unless user}}
               <button type="button" onClick="introClick(1)" id="introButton" class="button is-black is-medium">Panic!</button>
               <button type="button" onClick="findingHomeClick(4)" id="findingHomeButton" class="hidden button is-info is-medium">Look Around</button>
               <button type="button" onClick="goLeft()" id="goLeftButton" class="hidden button is-info is-medium">Go Left</button>
               <button type="button" onClick="goRight()" id="goRightButton" class="hidden button is-info is-medium">Go Right</button>
               <button type="button" onClick="enterHome()" id="enterHomeButton" class="hidden button is-info is-medium">Enter Home</button>
               <button type="button" onClick="createCharacter()" id="createCharacterButton" class="hidden button is-info is-medium">Create Character</button>
+              {{/unless}}
             </div>
           </div>
         </div>

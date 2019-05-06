@@ -9,18 +9,33 @@
 <link rel="stylesheet" href="../../../css/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/css/iziToast.min.css" integrity="sha256-f6fW47QDm1m01HIep+UjpCpNwLVkBYKd+fhpb4VQ+gE=" crossorigin="anonymous" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/js/iziToast.min.js" integrity="sha256-321PxS+POvbvWcIVoRZeRmf32q7fTFQJ21bXwTNWREY=" crossorigin="anonymous"></script>
-<script src="../../js/game.js"></script>
+{{#if user}}
+  <script>
+    let loggedUser = {
+      id: '{{user.id}}',
+      username: '{{user.username}}'
+    };
+  </script>
+  <!-- development version, includes helpful console warnings -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script type="module" src="../../js/game2.mjs"></script>
+{{else}}
+  <script src="../../js/game.js"></script>
+{{/if}}
 <script src="https://rawgit.com/pshihn/rough/master/dist/rough.js"></script>
 <style> .hidden { display: none; } </style>
 <body>
-  {{#unless login}}<section class="section" style="padding-top: 0">
-    <div class="container">
-      {{{body}}}
-    </div>
-  </section>
+  {{#if login}}
+    {{{body}}}
+  {{else if dash}}
+    {{{body}}}
   {{else}}
-  {{{body}}}
-  {{/unless}}
+    <section class="section" style="padding-top: 0">
+      <div class="container">
+        {{{body}}}
+      </div>
+    </section>
+  {{/if}}
 </body>
 {{#if success_msg}}
   <script>

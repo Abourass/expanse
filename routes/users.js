@@ -82,7 +82,7 @@ router.get('/login', csrfProtection, function(req, res, next) {
 
 router.post('/login', (req, res, next) => { // ===================================================> Login - POST <===================================
   passport.authenticate('local', {
-    successRedirect: '/dashboard',
+    successRedirect: '../dash',
     failureRedirect: '/',
     failureFlash: true,
   })(req, res, next);
