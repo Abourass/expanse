@@ -1,5 +1,5 @@
 // Variables
-let health = 1, money = 0, awareness = 0, yPosition = 35, xPosition = 15, currentLocation = 'a dirty alley';
+let health = 1, money = 0, awareness = 0, yPosition = 35, xPosition = 15, currentLocation = 'a dirty alley'; let clockState;
 
 // User Class
 class User {
@@ -137,7 +137,7 @@ function introClick(clickValue){
     nodeContent('locationUILeveled', player.location);
     nodeContent('awarenessUILeveled', player.awareness);
     createMap(1);
-    createPlayer(36, 20);
+    return createPlayer(36, 20);
   }
 }
 
@@ -171,7 +171,7 @@ function findingHomeClick(clickValue){
     xPosition += clickValue * 4;
     createPlayer(yPosition, xPosition);
     let toggleNodeArray = ['findingHomeButton', 'goLeftButton', 'goRightButton'];
-    nodeVisToggle(toggleNodeArray, 'hidden');
+    return nodeVisToggle(toggleNodeArray, 'hidden');
   }
 }
 
@@ -180,7 +180,7 @@ function goLeft() {
   nodeContent('locationUILeveled', player.location);
   nodeContent('messageUI2', 'You head left, down the street. You begin to see some familiar buildings, so trusting your instincts you continue where feels most familiar. It isn\'t long before you find yourself in front of house that feels as if it must be home, even if you have no specific memories of living there.');
   let toggleNodeArray = ['map', 'goLeftButton', 'goRightButton', 'enterHomeButton'];
-  nodeVisToggle(toggleNodeArray, 'hidden');
+  return nodeVisToggle(toggleNodeArray, 'hidden');
 }
 
 function goRight(){
@@ -188,18 +188,19 @@ function goRight(){
   nodeContent('locationUILeveled', player.location);
   nodeContent('messageUI2', 'You head right, down the street. You begin to see some familiar buildings, so trusting your instincts you continue where feels most familiar. It isn\'t long before you find yourself in front of house that feels as if it must be home, even if you have no specific memories of living there.');
   let toggleNodeArray = ['map', 'goLeftButton', 'goRightButton', 'enterHomeButton'];
-  nodeVisToggle(toggleNodeArray, 'hidden');
+  return nodeVisToggle(toggleNodeArray, 'hidden');
 }
 
 function enterHome(){
   player.setLocation('Home');
   nodeContent('locationUILeveled', player.location);
   nodeContent('messageUI2', 'You enter your home, and as the wave of adrenalin leaves you, you pass out on the floor');
-  sleepTight();
+  nodeVisToggle(['enterHomeButton'], 'hidden');
+  return clockState = setInterval(healthTimer, 1000);
 }
 
 function createCharacter(){
-
+  window.location.href = "http://192.168.1.104:5420/users/register";
 }
 
 // Map Script
@@ -370,15 +371,17 @@ function deleteScripts() {
   }
 }
 
-function sleepTight() {
-    window.setInterval(function () {
-      if (player.health < 100) {
-        player.incHealth(5);
-        nodeContent('healthUILeveled', player.health);
-      } else {
-        nodeContent('messageUI2', 'In your sleep you hear whispers from something. You strain to hear what they are saying but you can\'t quite make it out. Suddenly, a loud voice says "Are you ready to begin? We will need some information from your first.."');
-        let nodeArray = ['enterHomeButton', 'createCharacterButton'];
-        nodeVisToggle(nodeArray, 'hidden');
-      }
-    }, 1000);
+function healthTimer() {
+  if (player.health >= 100) {
+    nodeContent('messageUI2', 'In your sleep you hear whispers from something. You strain to hear what they are saying but you can\'t quite make it out. Suddenly, a loud voice says "Are you ready to begin? We will need some information from your first.."');
+    nodeVisToggle(['createCharacterButton'], 'hidden');
+    stopTimer(clockState);
+  } else if (player.health < 100) {
+    player.incHealth(5);
+    nodeContent('healthUILeveled', player.health);
+  }
+}
+
+function stopTimer(timerToStop) {
+  clearInterval(timerToStop);
 }
