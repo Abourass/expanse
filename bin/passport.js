@@ -13,7 +13,7 @@ module.exports = function(passport) {
         if (err) throw err;
         if (isMatch) { return done(null, user); }
         return done(null, false, { message: 'Password Incorrect' });
-      });
+      })
     });
   }));
   passport.serializeUser((user, done) => { done(null, user.id); });
