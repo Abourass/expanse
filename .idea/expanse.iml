@@ -17,5 +17,7 @@
     <orderEntry type="library" name="@types/csurf" level="application" />
     <orderEntry type="library" name="@types/express" level="application" />
     <orderEntry type="library" name="rough-async" level="application" />
+    <orderEntry type="library" name="vue" level="application" />
+    <orderEntry type="library" name="buefy" level="application" />
   </component>
 </module>

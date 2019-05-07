@@ -3,12 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <title>Expanse</title>
+  <link rel="stylesheet" href="https://unpkg.com/buefy/dist/buefy.min.css">
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  <script type="module" src="../../js/game2.mjs"></script>
+  <script src="https://unpkg.com/buefy/dist/buefy.min.js"></script>
+  <script type="module" src="../js/game2.mjs"></script>
 </head>
 <body>
 <div id="app">
-  <span>{{ message }}</span>
+  <stats-bar></stats-bar>
+  <br />
+  <messages-and-map></messages-and-map>
 </div>
 </body>
 </html>
