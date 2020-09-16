@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e463ee27-614a-4f0b-9c3e-b3346ede6b3e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/js/clickerFunctions.mjs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/game.mjs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/mapFunctions.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/expanse.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/expanse.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/game.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/game2.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/game2.mjs" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="bkfMaJuP" />
+  </component>
+  <component name="ProjectId" id="1hbqGGsd9hAyndIzoAneKbSaOnm" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="false" id="Update" />
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="javascript.nodejs.core.library.configured.version" value="12.13.1" />
+    <property name="javascript.nodejs.core.library.typings.version" value="12.12.59" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path" value="node" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors..ignore files" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Navi\WebstormProjects\expanse\views\errorSystem" />
+      <recent name="C:\Users\Navi\WebstormProjects\expanse" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.start">
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.start" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="project-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e463ee27-614a-4f0b-9c3e-b3346ede6b3e" name="Default Changelist" comment="" />
+      <created>1556596704175</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1556596704175</updated>
+      <workItem from="1556596705374" duration="5523000" />
+      <workItem from="1556673879611" duration="5944000" />
+      <workItem from="1556680003688" duration="30000" />
+      <workItem from="1556955352289" duration="7000" />
+      <workItem from="1556955383441" duration="598000" />
+      <workItem from="1557031494505" duration="111000" />
+      <workItem from="1557203758985" duration="358000" />
+      <workItem from="1557206038644" duration="3000" />
+      <workItem from="1557206457781" duration="1217000" />
+      <workItem from="1557207691976" duration="4000" />
+      <workItem from="1558759805015" duration="21000" />
+      <workItem from="1558759841366" duration="187000" />
+      <workItem from="1559372532270" duration="8000" />
+      <workItem from="1559372559259" duration="64000" />
+      <workItem from="1559372639607" duration="793000" />
+      <workItem from="1600290043503" duration="458000" />
+    </task>
+    <task id="LOCAL-00001" summary="init commit">
+      <created>1556598296599</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1556598296599</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Working prototype">
+      <created>1556601129845</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1556601129845</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Working prototype fixes">
+      <created>1556601263106</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1556601263106</updated>
+    </task>
+    <task id="LOCAL-00004" summary="REmoving env">
+      <created>1556601283499</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1556601283499</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Few fixes">
+      <created>1556601790832</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1556601790832</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Update to storey">
+      <created>1556602197641</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1556602197641</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Fixed where the player spawns">
+      <created>1556674678134</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1556674678134</updated>
+    </task>
+    <task id="LOCAL-00008" summary="See the street">
+      <created>1556677191462</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1556677191462</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Into the home">
+      <created>1556678426764</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1556678426764</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Sleepy time">
+      <created>1556679315570</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1556679315571</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Question Time">
+      <created>1556679773856</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1556679773856</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="init commit" />
+    <MESSAGE value="Working prototype" />
+    <MESSAGE value="Working prototype fixes" />
+    <MESSAGE value="REmoving env" />
+    <MESSAGE value="Few fixes" />
+    <MESSAGE value="Update to storey" />
+    <MESSAGE value="Fixed where the player spawns" />
+    <MESSAGE value="See the street" />
+    <MESSAGE value="Into the home" />
+    <MESSAGE value="Sleepy time" />
+    <MESSAGE value="Question Time" />
+    <option name="LAST_COMMIT_MESSAGE" value="Question Time" />
+  </component>
+</project>

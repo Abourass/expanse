@@ -101,7 +101,7 @@ Vue.component('messages-and-map', {
 // Initiate New User
 const player = new User('Antonio');
 
-var app = new Vue({
+let app = new Vue({
   el: '#app',
   data: {
     message: `Hello ${player.name}`
