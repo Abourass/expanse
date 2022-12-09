@@ -40,7 +40,7 @@
     "@getify/eslint-plugin-proper-ternary": "^3.1.1",
     "@types/express": "^4.17.11",
     "babel-preset-env": "^1.7.0",
-    "chai": "^4.3.4",
+    "chai": "^4.3.7",
     "codacy-coverage": "^3.4.0",
     "eslint": "^7.26.0",
     "eslint-config-airbnb-base": "^14.2.1",
