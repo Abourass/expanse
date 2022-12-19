@@ -48,7 +48,7 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-security": "^1.4.0",
     "google-closure-compiler": "^20221102.0.1",
-    "mocha": "^10.1.0",
+    "mocha": "^10.2.0",
     "nodemon": "^2.0.20",
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^22.0.0",
