@@ -44,7 +44,7 @@
     "codacy-coverage": "^3.4.0",
     "eslint": "^7.26.0",
     "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-plugin-import": "^2.23.1",
+    "eslint-plugin-import": "^2.27.4",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-security": "^1.4.0",
     "google-closure-compiler": "^20221102.0.1",
