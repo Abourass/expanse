@@ -46,7 +46,7 @@
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.23.1",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-security": "^1.4.0",
+    "eslint-plugin-security": "^1.6.0",
     "google-closure-compiler": "^20221102.0.1",
     "mocha": "^10.2.0",
     "nodemon": "^2.0.20",
