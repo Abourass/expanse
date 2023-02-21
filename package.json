@@ -38,7 +38,7 @@
   "devDependencies": {
     "@getify/eslint-plugin-proper-arrows": "^11.0.3",
     "@getify/eslint-plugin-proper-ternary": "^3.1.1",
-    "@types/express": "^4.17.11",
+    "@types/express": "^4.17.17",
     "babel-preset-env": "^1.7.0",
     "chai": "^4.3.7",
     "eslint": "^8.34.0",
